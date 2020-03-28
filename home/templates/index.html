@@ -1,0 +1,15 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} {{ setting.title }} {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+{% endblock %}
+
+
+
+{% block sidebar %} {% include "sidebar.html" %} {% endblock %}
+{% block slider %} {% include "slider.html" %} {% endblock %}
+{% block content %} {% include "content.html" %} {% endblock %}

@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/migrations/0005_contactformmessage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/migrations/0005_auto_20200414_0035.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/0006_auto_20200414_0035.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/images/1072887_620x360.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/images/2376353.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/images/5ca1c5ee45d2a029641856ae.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/images/Akbas-Kopek-9b62.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/1072887_620x360.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/2376353.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/5ca1c5ee45d2a029641856ae.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/5ca1c5ee45d2a029641856ae_Ibfjqz9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Akbas-Kopek-9b62.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/kopek.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/referanslarimiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/referanslarimiz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586799839995</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Hakkımızda sayfası düzenlendi, iletişim formu eklendi.">
+      <created>1586811262332</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586811262332</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -128,6 +141,7 @@
     <MESSAGE value="Header değişti" />
     <MESSAGE value="slider, sidebar değişti ve CKeditor eklendi" />
     <MESSAGE value="Template değiştirildi, iletişim ve referans sayfaları eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Template değiştirildi, iletişim ve referans sayfaları eklendi." />
+    <MESSAGE value="Hakkımızda sayfası düzenlendi, iletişim formu eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="Hakkımızda sayfası düzenlendi, iletişim formu eklendi." />
   </component>
 </project>

@@ -3,12 +3,14 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
+from content.models import Content
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
 def index(request):
   setting = Setting.objects.get(pk=1)
-  context = {'setting': setting, 'page': 'home'}
+  sliderdata = Content.objects.all()[:4]  #tüm verileri getiriyoruz, 4 tanesini gösteriyorum
+  context = {'setting': setting, 'page': 'home', 'sliderdata': sliderdata}  #sliderdatayı contexte ekliyor
   return render(request, 'index.html', context)
 
 def hakkimizda(request):

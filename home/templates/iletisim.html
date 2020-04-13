@@ -1,10 +1,15 @@
 {% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
 
-{% block title %} İletişim-{{ setting.contact }} {% endblock %}  #title olan bloğa bunu yaz
+{% block title %} İletişim-{{ setting.company }} {% endblock %}  #title olan bloğa bunu yaz
 {% block keywords %} {{ setting.keywords }} {% endblock %}
 {% block description %} {{ setting.description }} {% endblock %}
 
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+{% endblock %}
 
+
+ {% block sidebar %} {% include 'sidebar.html' %} {% endblock %}
 
 {% block content %}
         <!-- BREADCRUMB -->
@@ -18,10 +23,31 @@
           </div>
         </div>
         <!-- /BREADCRUMB-->
+
         <!--section -->
            <div class="wrapper row3">
         <main class="hoc container clear">
-              {{ setting.contact|safe }}   <!-- safe yazmazsak html kodlarıyla getirir -->
+             <div class="one_quarter">
+      <h6 class="heading">İletişim Formu</h6>
+
+      {% if messages %}  <!--sistem mesajları böyle kullanılır eğer bir mesaj varsa mesajın türüne göre ekrana yazıyor-->
+         {% for message in messages %}
+             <div class="alert alert-{{message.tags}}" role="alert">  <!--otomatik olarak css oluşturuyor-->
+                 {{ message }}
+             </div>
+         {% endfor %}
+      {% endif %}
+
+      <form method="post" action="">
+          {% csrf_token %}  <!--güvenlik tedbiri-->
+          {{ form.as_p }}   <!--gösterme şekli-->
+          <input type="submit" value="SEND FORM">   <!--buton-->
+
+      </form>
+    </div>
+ <div class="two_quarter">
+              {{ setting.contact|safe }}  <!-- safe yazmazsak html kodlarıyla getirir -->
+ </div>
         </main>
         </div>
         <!--section -->

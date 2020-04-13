@@ -2,6 +2,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
 # Create your models here.
+from django.forms import ModelForm, TextInput, Textarea
+
 
 class Setting(models.Model):
     STATUS = (  # açılan kutuda buranın gelmesini istiyoruz
@@ -35,4 +37,35 @@ class Setting(models.Model):
     def __str__(self):
         return self.title
 
+class ContactFormMessage(models.Model):
+    STATUS =(
+        ('New', 'New'),
+        ('Read', 'Read'),
+        ('Closed', 'Closed'),
+    )
+    name = models.CharField(blank=True, max_length=20)
+    email = models.CharField(blank=True, max_length=50)
+    subject = models.CharField(blank=True, max_length=50)
+    message = models.CharField(blank=True, max_length=255)
+    status = models.CharField(max_length=10,choices=STATUS,default='New')
+    ip = models.CharField(blank=True, max_length=20) #gönderenin ip adresi
+    note = models.CharField(blank=True, max_length=100) #admin notu
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
 
+    # pythonın görmemiz için bize bir şey döndürmesini istiyoruz
+    def __str__(self):
+        return self.name
+
+
+class ContactFormu(ModelForm):
+    class Meta:
+        model = ContactFormMessage  #bu forma ait
+        fields = ['name', 'email', 'subject', 'message']  #bu elemanlar gözükecek
+        widgets = {
+            'name': TextInput(attrs={'class': 'input', 'placeholder': 'Name & Surname'}),
+            'subject': TextInput(attrs={'class': 'input', 'placeholder': 'Subject'}),
+            'email': TextInput(attrs={'class': 'input', 'placeholder': 'Email Address'}),
+            'message': TextInput(attrs={'class': 'input', 'placeholder': 'Your Message', 'rows': '5'}),
+
+        }

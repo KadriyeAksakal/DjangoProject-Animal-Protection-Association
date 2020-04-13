@@ -9,14 +9,14 @@
 {% endblock %}
 
 
-
-{% block sidebar %} {% include "sidebar.html" %} {% endblock %}
+ {% block sidebar %} {% include 'sidebar.html' %} {% endblock %}
 
 {% block content %}
-        <!-- BREADCRUMB -->
-        <div id="breadcrumb">
-          <div class="container">
-            <ul class="breadcrumb">
+
+  <!-- BREADCRUMB -->
+         <div id="breadcrumb" class="hoc clear">
+
+           <ul>
               <li><a href="/">Anasayfa</a></li>
               <li class="active">Referanslarımız</li>
             </ul>
@@ -26,16 +26,10 @@
         <!-- /BREADCRUMB-->
 
         <!--section -->
-        <div class="section">
-          <!-- container -->
-          <div class="container">
-            <!-- row -->
-            <div class="row">
+      <div class="wrapper row3">
+        <main class="hoc container clear">
               {{ setting.references|safe }}   <!-- safe yazmazsak html kodlarıyla getirir -->
-            </div>s
-            <!-- /row -->
-          </div>
-           <!-- /container -->
-        </div>
+        </main>
+            </div>
         <!--section -->
 {% endblock %}

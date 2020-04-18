@@ -3,9 +3,11 @@ from django.db import models
 
 # Create your models here.
 from django.utils.safestring import mark_safe
+from mptt.fields import TreeForeignKey
+from mptt.models import MPTTModel
 
 
-class Category(models.Model):
+class Category(MPTTModel):
     STATUS = (  #açılan kutuda buranın gelmesini istiyoruz
         ('True', 'Evet'),
         ('False', 'Hayır'),
@@ -17,13 +19,25 @@ class Category(models.Model):
     status = models.CharField(max_length=10, choices=STATUS)
 
     slug = models.SlugField() #id yerine metin değişkeni ile çağırmak istersek buna slug denir
-    parent = models.ForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE) #model.CASCADE bir şey silineceği zaman ona bağlı şeyleri de silmeyi istediğimiz zaman kullanırız.
+    parent = TreeForeignKey('self', blank=True, null=True, related_name='children', on_delete=models.CASCADE) #model.CASCADE bir şey silineceği zaman ona bağlı şeyleri de silmeyi istediğimiz zaman kullanırız.
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
+    class MPTTMeta:
+        order_insertion_by = ['title']
+
+
     #pythonın görmemiz için bize bir şey döndürmesini istiyoruz
+   # def __str__(self):
+    #    return self.title
+
     def __str__(self):
-        return self.title
+        full_path = [self.title]
+        k = self.parent
+        while k is not None:
+            full_path.append(k.title)
+            k = k.parent
+        return ' / '.join(full_path[::-1])  #bunun amacı alt kategori olduğu sürece buluyor ve istediğimiz sıra ile bize getiriyor
 
     def image_tag(self):
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))

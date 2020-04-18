@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/content/migrations/0005_auto_20200414_0035.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0006_auto_20200414_0035.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/1072887_620x360.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/2376353.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/5ca1c5ee45d2a029641856ae.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/Akbas-Kopek-9b62.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/1072887_620x360.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/2376353.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/5ca1c5ee45d2a029641856ae.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/5ca1c5ee45d2a029641856ae_Ibfjqz9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/Akbas-Kopek-9b62.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/kopek.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animalEvents/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +32,9 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -118,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586811262332</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Slider dinamik hale getirildi.">
+      <created>1586814238394</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1586814238394</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -142,6 +142,7 @@
     <MESSAGE value="slider, sidebar değişti ve CKeditor eklendi" />
     <MESSAGE value="Template değiştirildi, iletişim ve referans sayfaları eklendi." />
     <MESSAGE value="Hakkımızda sayfası düzenlendi, iletişim formu eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hakkımızda sayfası düzenlendi, iletişim formu eklendi." />
+    <MESSAGE value="Slider dinamik hale getirildi." />
+    <option name="LAST_COMMIT_MESSAGE" value="Slider dinamik hale getirildi." />
   </component>
 </project>

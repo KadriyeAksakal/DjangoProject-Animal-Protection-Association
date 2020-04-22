@@ -11,10 +11,16 @@ def index(request):
   setting = Setting.objects.get(pk=1)
   sliderdata = Content.objects.all()[:4]  #tüm verileri getiriyoruz, 4 tanesini gösteriyorum
   category = Category.objects.all()
+  daycontents = Content.objects.all()[:4]
+  lastcontents = Content.objects.all().order_by('-id')[:4]
+  randomcontents = Content.objects.all().order_by('?')[:4]   #? random olarak getirir
   context = {'setting': setting,
              'category': category,
              'page': 'home',
-             'sliderdata': sliderdata}  #sliderdatayı contexte ekliyor
+             'sliderdata': sliderdata,  #sliderdatayı contexte ekliyor
+             'daycontents': daycontents,
+             'lastcontents': lastcontents,
+             'randomcontents': randomcontents}
   return render(request, 'index.html', context)
 
 def hakkimizda(request):

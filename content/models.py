@@ -51,8 +51,8 @@ class Content(models.Model):
     )
     category = models.ForeignKey(Category, on_delete=models.CASCADE) #relation with category table
     title = models.CharField(max_length=100) #charfield=uzunluk, alan türü
-    keywords = models.CharField(blank=True,max_length=255)
-    description = models.CharField(blank=True,max_length=255)
+    keywords = models.CharField(blank=True, max_length=255)
+    description = models.CharField(blank=True, max_length=255)
     image = models.ImageField(blank=True, upload_to='images/')
     detail = RichTextUploadingField()
     slug = models.SlugField(blank=True, max_length=100) #id yerine metin değişkeni ile çağırmak istersek buna slug denir

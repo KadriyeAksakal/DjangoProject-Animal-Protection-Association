@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/home/templates/contents.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animalEvents/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animalEvents/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/referanslarimiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/referanslarimiz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,13 +41,13 @@
     <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Django\animalEvents\home\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Django\animalEvents\home\templates" />
       <recent name="C:\Django\animalEvents\home\static\css" />
       <recent name="C:\Django\animalEvents\home" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\animalEvents\home\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -118,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586814238394</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Alt kategori menüsü oluşturuldu.">
+      <created>1587170140857</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587170140857</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -143,6 +154,7 @@
     <MESSAGE value="Template değiştirildi, iletişim ve referans sayfaları eklendi." />
     <MESSAGE value="Hakkımızda sayfası düzenlendi, iletişim formu eklendi." />
     <MESSAGE value="Slider dinamik hale getirildi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Slider dinamik hale getirildi." />
+    <MESSAGE value="Alt kategori menüsü oluşturuldu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Alt kategori menüsü oluşturuldu." />
   </component>
 </project>

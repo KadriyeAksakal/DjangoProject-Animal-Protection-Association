@@ -12,7 +12,7 @@
                    {% load mptt_tags %}
                     {% recursetree category %}
 
-                      <li><a class="drop" href="/category/{{ node.slug }}" {% if not node.is_leaf_node %} aria-expanded="true"   {% endif %} > {{ node.title }}</a>
+                      <li><a class="drop" href="/category/{{ node.id }}/{{ node.slug }}" {% if not node.is_leaf_node %} aria-expanded="true"   {% endif %} > {{ node.title }}</a>
                             {% if not node.is_leaf_node %}
                                 <ul class="children">
                                   <li><a href="/category/{{ node.slug }}">{{ children }}</a></li>

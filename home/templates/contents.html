@@ -1,0 +1,53 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} {{ categorydata.title }} Contents {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %} {{ categorydata.keywords }} {% endblock %}
+{% block description %} {{ categorydata.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+{% endblock %}
+
+ {% block sidebar %} {% include 'sidebar.html' %} {% endblock %}
+
+{% block content %}
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb" class="hoc clear">
+
+           <ul>
+              <li><a href="/">Anasayfa</a></li>
+               <li><a class="active">{{ categorydata.title }} </a></li>
+            </ul>
+
+          </div>
+
+        <!-- /BREADCRUMB-->
+
+        <!--section -->
+      <div class="wrapper row3">
+        <main class="hoc container clear">
+
+    <ul class="nospace group overview">
+
+     {% for rs in contents %}
+      <li class="one_third">
+        <article>
+          <h6 class="heading"> {{rs.title }} </h6>
+          <a href="#"><img src="{{ rs.image.url }} " alt=""></a>
+          <ul class="nospace meta">
+            <li><i class="fa fa-user"></i> <a href="#"> {{ rs.category }}</a></li>
+          </ul>
+          <p>{{ rs.description }}</p>
+          <footer class="nospace"><a class="btn" href="/contents/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>
+        </article>
+      </li>
+   {% endfor %}
+
+
+
+    </ul>
+        </main>
+
+        </div>
+        <!--section -->
+{% endblock %}

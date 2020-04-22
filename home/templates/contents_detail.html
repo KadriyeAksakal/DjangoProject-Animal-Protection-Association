@@ -1,0 +1,52 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} {{ content.title }} {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %} {{ content.keywords }} {% endblock %}
+{% block description %} {{ content.description }} {% endblock %}
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+{% endblock %}
+ {% block sidebar %} {% include 'sidebar.html' %} {% endblock %}
+
+{% block content %}
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb" class="hoc clear">
+
+           <ul>
+              <li><a href="/">Anasayfa</a></li>
+               <li><a href="/category/{{ content.category_id }}/{{ content.category.slug }}">{{ content.category }}</a></li>
+               <li><a class="active">{{ content.title }}</a></li>
+            </ul>
+
+          </div>
+
+        <!-- /BREADCRUMB-->
+
+        <!--section -->
+      <div class="wrapper row3">
+        <main class="hoc container clear">
+          <div class="content">
+              <br><br><br>
+              <div class="wrapper">
+              <div class="hoc clear">
+                <figure id="introblocks">
+                  <ul class="nospace group">
+                        <li class="one_third first"><a href="#"><img src="{{ content.image.url }}" alt="" style="height: 300px"></a></li>
+                       {% for rs in images %}
+                        <li class="one_third"><a href="#"><img src="{{ rs.image.url }}" alt="" style="height: 300px"></a></li>
+                       {% endfor %}
+                  </ul>
+                </figure>
+              </div>
+            </div>
+       <h1> {{ content.title }}</h1>
+      <p>{{ content.description }}</p>
+
+      <p>{{ content.detail | safe }}</p>
+
+    </div>
+        </main>
+
+        </div>
+        <!--section -->
+{% endblock %}

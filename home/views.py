@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from content.models import Content, Category
+from content.models import Content, Category, Images
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
@@ -63,3 +63,13 @@ def category_contents(request, id, slug):
                'categorydata': categorydata,
                }
     return render(request, 'contents.html', context)
+
+def contents_detail(request, id, slug):
+    category = Category.objects.all()
+    content = Content.objects.get(pk=id)
+    images = Images.objects.filter(content_id=id)
+    context = {'content': content,
+               'category': category,
+               'images': images,
+               }
+    return render(request, 'contents_detail.html', context)

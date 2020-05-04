@@ -30,7 +30,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('category/<int:id>/<slug:slug>/', views.category_contents, name='category_contents'),
-    path('contents/<int:id>/<slug:slug>/', views.contents_detail, name='contents_detail'),
+    path('content/<int:id>/<slug:slug>/', views.content, name='content'),
+    path('contents_detail/<int:id>/<slug:slug>/', views.contents_detail, name='contents_detail'),
+
 ]
 
 if settings.DEBUG: #new

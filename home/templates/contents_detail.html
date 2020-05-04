@@ -6,16 +6,15 @@
 {% block head %}
     <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
 {% endblock %}
- {% block sidebar %} {% include 'sidebar.html' %} {% endblock %}
 
 {% block content %}
         <!-- BREADCRUMB -->
         <div id="breadcrumb" class="hoc clear">
 
            <ul>
-              <li><a href="/">Anasayfa</a></li>
-               <li><a href="/category/{{ content.category_id }}/{{ content.category.slug }}">{{ content.category }}</a></li>
-               <li><a class="active">{{ content.title }}</a></li>
+               <li><a href="/">Anasayfa</a></li>
+               <li><a href="/category/{{content.category_id}}/{{content.category.slug}}">{{ content.category }}</a></li>
+               <li><a class="active">{{ content.title }} </a></li>
             </ul>
 
           </div>

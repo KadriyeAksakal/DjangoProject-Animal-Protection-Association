@@ -8,7 +8,7 @@
     <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
 {% endblock %}
 
- {% block sidebar %} {% include 'sidebar.html' %} {% endblock %}
+
 
 {% block content %}
         <!-- BREADCRUMB -->
@@ -38,7 +38,7 @@
             <li><i class="fa fa-user"></i> <a href="#"> {{ rs.category }}</a></li>
           </ul>
           <p>{{ rs.description }}</p>
-          <footer class="nospace"><a class="btn" href="/contents/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>
+          <footer class="nospace"><a class="btn" href="/contents_detail/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>
         </article>
       </li>
    {% endfor %}

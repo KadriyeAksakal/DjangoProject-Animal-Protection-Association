@@ -1,7 +1,7 @@
 {% load static %}
 <div class="bgded overlay light" >
  <div id="pageintro" class="hoc clear">
-    <div class="flexslider basicslider">
+    <div class="fldexslier basicslider">
       <ul class="slides">
 
         <!--banner-->
@@ -10,7 +10,7 @@
          <article>
             <img src="{{ rs.image.url }} " alt="">
             <p>{{ rs.title }}</p>
-               <footer class="nospace"><a class="btn" href="/contents/{{ rs.id }}/{{ rs.slug }}">İncele.. &raquo;</a></footer>
+               <footer class="nospace"><a class="btn" href="/contents_detail/{{ rs.id }}/{{ rs.slug }}">İncele.. &raquo;</a></footer>
           </article>
         </li>
         {% endfor %}

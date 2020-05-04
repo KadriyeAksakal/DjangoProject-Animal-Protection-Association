@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from content.models import Content, Category, Images
+from content.models import Content, Images, Category
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
@@ -11,26 +11,28 @@ def index(request):
   setting = Setting.objects.get(pk=1)
   sliderdata = Content.objects.all()[:4]  #tüm verileri getiriyoruz, 4 tanesini gösteriyorum
   category = Category.objects.all()
-  daycontents = Content.objects.all()[:4]
-  lastcontents = Content.objects.all().order_by('-id')[:4]
-  randomcontents = Content.objects.all().order_by('?')[:4]   #? random olarak getirir
+  activitydata = Content.objects.filter(type='activity')[:4]
+  announcementdata = Content.objects.filter(type='announcement').order_by('-id')[:4]
+ # randomcontents = Content.objects.all().order_by('?')[:4]   #? random olarak getirir
   context = {'setting': setting,
              'category': category,
              'page': 'home',
-             'sliderdata': sliderdata,  #sliderdatayı contexte ekliyor
-             'daycontents': daycontents,
-             'lastcontents': lastcontents,
-             'randomcontents': randomcontents}
+             'sliderdata': sliderdata,
+             'activitydata': activitydata,
+             'announcementdata': announcementdata,
+             }
   return render(request, 'index.html', context)
 
 def hakkimizda(request):
   setting = Setting.objects.get(pk=1)
-  context = {'setting': setting}
+  category = Category.objects.all()
+  context = {'setting': setting, 'category': category}
   return render(request, 'hakkimizda.html', context)
 
 def referanslar(request):
   setting = Setting.objects.get(pk=1)
-  context = {'setting': setting}
+  category = Category.objects.all()
+  context = {'setting': setting, 'category': category}
   return render(request, 'referanslarimiz.html', context)
 
 def iletisim(request):
@@ -50,7 +52,8 @@ def iletisim(request):
 
   setting = Setting.objects.get(pk=1)
   form = ContactFormu()
-  context = {'setting': setting, 'form': form}
+  category = Category.objects.all()
+  context = {'setting': setting, 'form': form, 'category': category}
   return render(request, 'iletisim.html', context)
 
 
@@ -64,12 +67,17 @@ def category_contents(request, id, slug):
                }
     return render(request, 'contents.html', context)
 
-def contents_detail(request, id, slug):
+def content(request, id, slug):
+    content = Content.objects.get(category_id=id)
+    link = '/contents_detail/'+str(content.id)+'/'+content.slug
+    #return HttpResponse(link)
+    return HttpResponseRedirect(link)
+
+def contents_detail(request,id,slug):
     category = Category.objects.all()
     content = Content.objects.get(pk=id)
-    images = Images.objects.filter(content_id=id)
-    context = {'content': content,
-               'category': category,
-               'images': images,
-               }
+    context = {
+        'content': content,
+        'category': category,
+    }
     return render(request, 'contents_detail.html', context)

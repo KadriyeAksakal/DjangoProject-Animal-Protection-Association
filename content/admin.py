@@ -20,7 +20,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class ContentAdmin(admin.ModelAdmin):
    # fields = ['title', 'status'] #dikkate alacağımız kısımları yazarız buraya
      list_display = ['title', 'category', 'detail', 'image_tag', 'status']   #göstermek istediklerimizi yazarız buraya
-     list_filter = ['status', 'category'] #belirli bir şeye göre filtrelemek istersek
+     list_filter = ['status'] #belirli bir şeye göre filtrelemek istersek
      inlines = [ContentImageInline] #buraya eklediğimizdesadece ilgili content ile ilgili imageler eklenir
      readonly_fields = ('image_tag',)
 
@@ -48,7 +48,8 @@ class CategoryAdmin2(DraggableMPTTAdmin):
                 cumulative=True)
 
         # Add non cumulative product count
-        qs = Category.objects.add_related_count(qs,
+        qs = Category.objects.add_related_count(
+                 qs,
                  Content,
                  'category',
                  'contents_count',

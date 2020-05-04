@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/templates/contents_detail.html" afterDir="false" />
+    <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="Duyuru ve etkinlik sayfaları eklendi. İçerikleri düzenlendi. Sidebar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animalEvents/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/animalEvents/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0002_auto_20200324_1608.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0003_auto_20200324_1658.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0004_auto_20200412_1713.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0005_auto_20200414_0035.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/migrations/0006_auto_20200418_0106.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/contents.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/contents_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contents_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/hakkimizda.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/hakkimizda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/iletisim.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/iletisim.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/referanslarimiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/referanslarimiz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/services.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/sidebar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/slider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587593912291</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="İçerik detay sayfası eklendi.">
+      <created>1587597949683</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587597949683</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -164,6 +191,7 @@
     <MESSAGE value="Alt kategori menüsü oluşturuldu." />
     <MESSAGE value="Kategori ürünlerini gösterme eklendi." />
     <MESSAGE value="Anasayfa düzenlendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Anasayfa düzenlendi." />
+    <MESSAGE value="İçerik detay sayfası eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="İçerik detay sayfası eklendi." />
   </component>
 </project>

@@ -17,30 +17,11 @@
 <div class="wrapper row3">
   <main class="hoc container clear">
     <!-- main body -->
-     <h6 class="heading" ><b>RandomContents</b></h6>
-    <hr class="btmspace-80">
-    <article class="group btmspace-80">
-       {% for rs in randomcontents %}
-      <div class="one_third "></div>
-      <div class="one_third">
-        <img class="borderedbox inspace-10" src="{{ rs.image.url }}" alt="">
-        <h6 class="heading">{{ rs.title }}</h6>
-        <ul class="nospace meta">
-          <li><i class="fa fa-user"></i> <a href="#">{{ rs.category }}</a></li>
-        </ul>
-        <p>{{ rs.description }}</p>
-        <footer class="nospace"><a class="btn" href="/contents/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>
-      </div>
-      {% endfor %}
-    </article>
-
-
-    <br><br>
-     <h6 class="heading" ><b>DayContents</b></h6>
+    <h6 class="heading" ><b>Etkinlikler</b></h6>
     <hr class="btmspace-80">
 
     <ul class="nospace group overview">
-       {% for rs in daycontents %}
+       {% for rs in activitydata %}
       <li class="one_third">
         <article><a href="#"><img src="{{ rs.image.url }}" alt="" style="height: 200px"></a>
           <h6 class="heading">{{ rs.title }}</h6>
@@ -48,7 +29,7 @@
             <li><i class="fa fa-user"></i> <a href="#"> {{ rs.category }}</a></li>
           </ul>
           <p>{{ rs.description }}</p>
-        <footer class="nospace"><a class="btn" href="/contents/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>
+        <footer class="nospace"><a class="btn" href="/contents_detail/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>
         </article>
       </li>
       {% endfor %}
@@ -56,10 +37,10 @@
 
 
     <br><br><br>
-     <h6 class="heading"><b>LastContents</b></h6>
+     <h6 class="heading"><b>Duyurular</b></h6>
        <hr class="btmspace-80">
     <ul class="nospace group overview">
-       {% for rs in lastcontents %}
+       {% for rs in announcementdata %}
       <li class="one_third">
         <article><a href="#"><img src="{{ rs.image.url }}" alt="" style="height: 200px"></a>
           <h6 class="heading">{{ rs.title }}</h6>
@@ -67,7 +48,7 @@
             <li><i class="fa fa-user"></i> <a href="#">{{ rs.category }}</a></li>
           </ul>
           <p>{{ rs.description }}</p>
-          <footer class="nospace"><a class="btn" href="/contents/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>
+          <footer class="nospace"><a class="btn" href="/contents_detail/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>
         </article>
       </li>
       {% endfor %}

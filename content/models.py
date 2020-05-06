@@ -59,6 +59,8 @@ class Content(models.Model):
     TYPE = (
         ('activity', 'activity'),  # etkinlik
         ('announcement', 'announcement'),  # duyuru
+        ('categories', 'categories'),  # duyuru
+
     )
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE) #relation with category table

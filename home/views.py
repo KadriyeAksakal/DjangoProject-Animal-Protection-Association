@@ -9,17 +9,19 @@ from home.models import Setting, ContactFormu, ContactFormMessage
 
 def index(request):
   setting = Setting.objects.get(pk=1)
-  sliderdata = Content.objects.all()[:4]  #tüm verileri getiriyoruz, 4 tanesini gösteriyorum
+  sliderdata = Content.objects.all().order_by('-id')[:4]  #tüm verileri getiriyoruz, 4 tanesini gösteriyorum
   category = Category.objects.all()
-  activitydata = Content.objects.filter(type='activity')[:4]
-  announcementdata = Content.objects.filter(type='announcement').order_by('-id')[:4]
- # randomcontents = Content.objects.all().order_by('?')[:4]   #? random olarak getirir
+  activitydata = Content.objects.filter(type='activity').order_by('-id')[:3]
+  announcementdata = Content.objects.filter(type='announcement').order_by('?')[:3]
+  categoriesdata = Content.objects.filter(type='categories').order_by('?')[:3]   #? random olarak getirir
   context = {'setting': setting,
              'category': category,
              'page': 'home',
              'sliderdata': sliderdata,
              'activitydata': activitydata,
              'announcementdata': announcementdata,
+             'categoriesdata': categoriesdata,
+
              }
   return render(request, 'index.html', context)
 
@@ -76,8 +78,10 @@ def content(request, id, slug):
 def contents_detail(request,id,slug):
     category = Category.objects.all()
     content = Content.objects.get(pk=id)
+    images = Images.objects.filter(content_id=id)
     context = {
         'content': content,
         'category': category,
+        'images': images,
     }
     return render(request, 'contents_detail.html', context)

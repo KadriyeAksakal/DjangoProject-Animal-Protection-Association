@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from content.models import Content, Images, Menu
+from content.models import Content, Images, Menu, Comment
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
@@ -76,6 +76,7 @@ def menu(request, id):
 
 
 def contentdetail(request, id, slug):
+    comments = Comment.objects.filter(content_id=id, status='True')
     menu = Menu.objects.all()
     content = Content.objects.get(pk=id)
     try:
@@ -85,6 +86,7 @@ def contentdetail(request, id, slug):
             'content': content,
             'images': images,
             'menu': menu,
+            'comments': comments,
 
         }
         return render(request, 'contents_detail.html', context)

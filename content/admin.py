@@ -7,9 +7,9 @@ from mptt.admin import DraggableMPTTAdmin
 from content.models import Content, Images, Comment, Menu
 
 
-class ContentImageInline(admin.TabularInline): #image tablosundan 3 tane eklenecek alan oluştur
+class ContentImageInline(admin.TabularInline): #image tablosundan 2 tane eklenecek alan oluştur
     model = Images
-    extra = 3
+    extra = 2
 
 
 class ContentAdmin(admin.ModelAdmin):
@@ -27,8 +27,8 @@ class MenuAdmin(DraggableMPTTAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_fields = ['subject', 'comment', 'content', 'user', 'status']  # dikkate alacağımız kısımları yazarız buraya
-    list_display = ['status']
+    list_display= ['subject', 'comment', 'content', 'user', 'status']  # dikkate alacağımız kısımları yazarız buraya
+    list_fields = ['status']
 
 
 admin.site.register(Content, ContentAdmin)

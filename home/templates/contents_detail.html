@@ -33,50 +33,52 @@
       <p>{{ content.detail | safe }}</p>
 
        <br><br><br>
-        <div id="gallery">
-        <figure>
-          <ul class="nospace clear">
-               {% for rs in images %} <!-- İçerik resim galerisi-->
-            <li class="one_quarter"><a href="#"><img src="{{ rs.image.url }}" alt="" style="height: 300px"></a></li>
-                {% endfor %}
-          </ul>
-        </figure>
-      </div>
-    <nav class="pagination">
-        <ul>
-          <li ><a href="#">&laquo; Previous</a></li>
-          <li class="current"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><strong>&hellip;</strong></li>
-          <li><a href="#">6</a></li>
-          <li ><strong>7</strong></li>
-          <li><a href="#">8</a></li>
-          <li><a href="#">9</a></li>
-          <li><strong>&hellip;</strong></li>
-          <li><a href="#">14</a></li>
-          <li><a href="#">15</a></li>
-          <li><a href="#">Next &raquo;</a></li>
-        </ul>
-      </nav>
-    </div>
+              <div class="hoc clear">
+                  <figure id="introblocks">
+                      <ul class="nospace group">
+                          <li class="one_third first"><a href="#"><img src="{{ content.image.url }}" alt="" style="height: 200px"></a></li>
+                          {% for rs in images %} <!-- İçerik resim galerisi-->
+                          <li class="one_third"><a href="#"><img src="{{ rs.image.url }}" alt="" style="height: 200px"></a></li>
+                          {% endfor %}
+
+                      </ul>
+                  </figure>
+              </div>
+
+
             <!-- yorum vs eklenecek-->
      <div id="comments">
         <h2>Comments</h2>
         <ul>
-          <li>
+            {% for rs in comments %}
+               <li>
+                <article>
+                  <header>
+                    <figure class="avatar"><i class="fa fa-user-o"></i></figure>
+                    <address>
+                    By <a href="#"><b>{{ rs.user }}</b></a>
+                    </address>
+                    <time datetime="2045-04-06T08:15+00:00">{{ rs.create_at }}</time>
+                  </header>
+                  <div class="comcont">
+                      <b> {{rs.subject}} </b>
+                      <br>
+                        {{rs.comment}}
+                  </div>
+                </article>
+               </li>
+           {% endfor %}
+            <li>
             <article>
-              <header>
-                <address>
-                    {% if messages %}
-                      {% for message in messages %}
-                 <a href="#">{{ message.tags }}</a>
-                </address>
-              </header>
-              <div class="comcont">
-                <p> {{ message }} </p>
-              </div>
+
+            {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-{{message.tags}}" role="alert" >
+                    <p> {{ message }} </p>
+                  </div>
                 {% endfor %}
-                {% endif %}
+            {% endif %}
+
             </article>
           </li>
 
@@ -84,10 +86,10 @@
         </ul>
 
         <h2>Write A Comment</h2>
-        <form action="/content/addcomment/{{coontent.id}}" method="post">
+        <form action="/content/addcomment/{{content.id}}" method="post">
             {% csrf_token %}
           <div class="one_third first">
-            <label for="id_subject">Name <span>*</span></label>
+            <label for="id_subject">Subject <span>*</span></label>
             <input type="text" name="subject" id="id_subject" placeholder="Subject" value="" size="22" required>
           </div>
 
@@ -99,7 +101,7 @@
            {% if user.id is not None %}
             <input type="submit" name="submit" value="Submit Form">
            {% else %}
-              Yorum Eklemek için Login olunuz!
+              Yorum Eklemek için  <a href="/login"> Login </a>  olunuz!
            {% endif %}
           </div>
         </form>

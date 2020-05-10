@@ -10,9 +10,9 @@ from content.models import CommentForm, Comment
 def index(request):
       return HttpResponse(" Content Page")
 
-@login_required(login_url='/login') #check login
-def addcomment(request, id):
+@login_required(login_url='/login') #check login, login olup olmadığını kontrol ediyorum
 
+def addcomment(request, id):
       url = request.META.get('HTTP_REFERER')  # get last url
       if request.method == 'POST': #form post edildiyse
             form = CommentForm(request.POST)
@@ -30,4 +30,4 @@ def addcomment(request, id):
                   return HttpResponseRedirect(url)
 
             messages.warning(request, 'Yorumunuz kaydedilmedi. Lütfen konrol ediniz.')
-            return  HttpResponse('Kaydedilme İşlemi Gerçekleşmedi')
+            return HttpResponse('Kaydedilme İşlemi Gerçekleşmedi')

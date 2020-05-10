@@ -54,23 +54,7 @@
       {% endfor %}
     </ul>
 
-     <br><br><br>
-     <h6 class="heading"><b>Kategoriler</b></h6>
-       <hr class="btmspace-80">
-    <ul class="nospace group overview">
-       {% for rs in categoriesdata %}
-      <li class="one_third">
-        <article><a href="/contents_detail/{{ rs.id }}/{{ rs.slug }}"><img src="{{ rs.image.url }}" alt="" style="height: 200px"></a>
-          <h6 class="heading">{{ rs.title }}</h6>
-          <ul class="nospace meta">
-            <li><i class="fa fa-user"></i> <a href="#">{{ rs.category }}</a></li>
-          </ul>
-          <p>{{ rs.description }}</p>
-          <footer class="nospace"><a class="btn" href="/contents_detail/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>
-        </article>
-      </li>
-      {% endfor %}
-    </ul>
+
     <!-- / main body -->
     <div class="clear"></div>
   </main>

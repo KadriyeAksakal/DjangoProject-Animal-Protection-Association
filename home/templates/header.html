@@ -11,11 +11,11 @@
           <li><a href="/hakkimizda">Hakkımızda</a></li>
 
           {% load mptt_tags %}
-          {% recursetree category %}
-          <li><a class="drop" href="/category/{{ node.id }}/{{ node.slug }}" {% if not node.is_leaf_node %} aria-expanded="true"   {% endif %} > {{ node.title }}</a>
+          {% recursetree menu %}
+          <li><a class="drop" href="/menu/{{ node.id }}" {% if not node.is_leaf_node %} aria-expanded="true"   {% endif %} > {{ node.title }}</a>
                {% if not node.is_leaf_node %}
                <ul class="children">
-                 <li><a href="/category/{{ node.id }}/{{ node.slug }}">{{ children }}</a></li>
+                 <li><a href="#">{{ children }}</a></li>
                </ul>
                {% endif %}
           </li>

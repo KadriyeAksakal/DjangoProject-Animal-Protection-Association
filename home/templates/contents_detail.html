@@ -13,7 +13,6 @@
 
            <ul>
                <li><a href="/">Anasayfa</a></li>
-               <li><a href="/category/{{content.category_id}}/{{content.category.slug}}">{{ content.category }}</a></li>
                <li><a class="active">{{ content.title }} </a></li>
             </ul>
 
@@ -25,25 +24,87 @@
       <div class="wrapper row3">
         <main class="hoc container clear">
           <div class="content">
-              <br><br><br>
-              <div class="wrapper">
-              <div class="hoc clear">
-                <figure id="introblocks">
-                  <ul class="nospace group">
-                        <li class="one_third first"><a href="#"><img src="{{ content.image.url }}" alt="" style="height: 300px"></a></li>
-                       {% for rs in images %}
-                        <li class="one_third"><a href="#"><img src="{{ rs.image.url }}" alt="" style="height: 300px"></a></li>
-                       {% endfor %}
-                  </ul>
-                </figure>
-              </div>
-            </div>
-       <h1> {{ content.title }}</h1>
+              <h1> {{ content.title }}</h1>
+
+              <img src="{{ content.image.url }}" alt="" style="height: 300px">
+
       <p>{{ content.description }}</p>
 
       <p>{{ content.detail | safe }}</p>
 
+       <br><br><br>
+        <div id="gallery">
+        <figure>
+          <ul class="nospace clear">
+               {% for rs in images %} <!-- İçerik resim galerisi-->
+            <li class="one_quarter"><a href="#"><img src="{{ rs.image.url }}" alt="" style="height: 300px"></a></li>
+                {% endfor %}
+          </ul>
+        </figure>
+      </div>
+    <nav class="pagination">
+        <ul>
+          <li ><a href="#">&laquo; Previous</a></li>
+          <li class="current"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><strong>&hellip;</strong></li>
+          <li><a href="#">6</a></li>
+          <li ><strong>7</strong></li>
+          <li><a href="#">8</a></li>
+          <li><a href="#">9</a></li>
+          <li><strong>&hellip;</strong></li>
+          <li><a href="#">14</a></li>
+          <li><a href="#">15</a></li>
+          <li><a href="#">Next &raquo;</a></li>
+        </ul>
+      </nav>
     </div>
+            <!-- yorum vs eklenecek-->
+     <div id="comments">
+        <h2>Comments</h2>
+        <ul>
+          <li>
+            <article>
+              <header>
+                <address>
+                    {% if messages %}
+                      {% for message in messages %}
+                 <a href="#">{{ message.tags }}</a>
+                </address>
+              </header>
+              <div class="comcont">
+                <p> {{ message }} </p>
+              </div>
+                {% endfor %}
+                {% endif %}
+            </article>
+          </li>
+
+
+        </ul>
+
+        <h2>Write A Comment</h2>
+        <form action="/content/addcomment/{{coontent.id}}" method="post">
+            {% csrf_token %}
+          <div class="one_third first">
+            <label for="id_subject">Name <span>*</span></label>
+            <input type="text" name="subject" id="id_subject" placeholder="Subject" value="" size="22" required>
+          </div>
+
+          <div class="block clear">
+            <label for="id_comment">Your Comment</label>
+            <textarea name="comment" id="id_comment" cols="25" rows="10" placeholder="Your review"></textarea>
+          </div>
+          <div>
+           {% if user.id is not None %}
+            <input type="submit" name="submit" value="Submit Form">
+           {% else %}
+              Yorum Eklemek için Login olunuz!
+           {% endif %}
+          </div>
+        </form>
+      </div>
+
         </main>
 
         </div>

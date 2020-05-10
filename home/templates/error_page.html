@@ -1,0 +1,34 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} Hakkımızda-{{ setting.company }} {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb" class="hoc clear">
+
+           <ul>
+              <li><a href="/">Anasayfa</a></li>
+               <li><a class="active">Hata</a></li>
+            </ul>
+
+          </div>
+
+        <!-- /BREADCRUMB-->
+
+        <!--section -->
+      <div class="wrapper row3">
+        <main class="hoc container clear">
+            <div align="center">
+                <H1>ARADIĞINIZ İÇERİK BULUNAMADI</H1>
+                <H3><a href="/">Anasayfaya Dön</a></H3>
+            </div>
+        </main>
+
+        </div>
+        <!--section -->
+{% endblock %}

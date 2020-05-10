@@ -3,85 +3,101 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from content.models import Content, Images, Category
+from content.models import Content, Images, Menu
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
 def index(request):
-  setting = Setting.objects.get(pk=1)
-  sliderdata = Content.objects.all().order_by('-id')[:4]  #tüm verileri getiriyoruz, 4 tanesini gösteriyorum
-  category = Category.objects.all()
-  activitydata = Content.objects.filter(type='activity').order_by('-id')[:3]
-  announcementdata = Content.objects.filter(type='announcement').order_by('?')[:3]
-  categoriesdata = Content.objects.filter(type='categories').order_by('?')[:3]   #? random olarak getirir
-  context = {'setting': setting,
-             'category': category,
-             'page': 'home',
-             'sliderdata': sliderdata,
-             'activitydata': activitydata,
-             'announcementdata': announcementdata,
-             'categoriesdata': categoriesdata,
+    setting = Setting.objects.get(pk=1)
+    menu = Menu.objects.all()
+    sliderdata = Content.objects.all().order_by('-id')[:4]  # tüm verileri getiriyoruz, 4 tanesini gösteriyorum
+    activitydata = Content.objects.filter(type='etkinlik').order_by('-id')[:3]
+    announcementdata = Content.objects.filter(type='duyuru').order_by('?')[:3]
+    categoriesdata = Content.objects.filter(type='kategori').order_by('?')[:3]  # ? random olarak getirir
+    context = {'setting': setting,
+               'page': 'home',
+               'sliderdata': sliderdata,
+               'activitydata': activitydata,
+               'announcementdata': announcementdata,
+               'categoriesdata': categoriesdata,
+               'menu': menu,
 
-             }
-  return render(request, 'index.html', context)
+               }
+    return render(request, 'index.html', context)
+
 
 def hakkimizda(request):
-  setting = Setting.objects.get(pk=1)
-  category = Category.objects.all()
-  context = {'setting': setting, 'category': category}
-  return render(request, 'hakkimizda.html', context)
+    setting = Setting.objects.get(pk=1)
+    menu = Menu.objects.all()
+    context = {'setting': setting, 'menu': menu}
+    return render(request, 'hakkimizda.html', context)
+
 
 def referanslar(request):
-  setting = Setting.objects.get(pk=1)
-  category = Category.objects.all()
-  context = {'setting': setting, 'category': category}
-  return render(request, 'referanslarimiz.html', context)
+    setting = Setting.objects.get(pk=1)
+    menu = Menu.objects.all()
+    context = {'setting': setting, 'menu': menu}
+    return render(request, 'referanslarimiz.html', context)
+
 
 def iletisim(request):
+    if request.method == 'POST':  # form post edildiyse
+        form = ContactFormu(request.POST)
+        if form.is_valid():
+            data = ContactFormMessage()  # model ile bağlantı kur
+            data.name = form.cleaned_data['name']  # fromdan bilgiyi al
+            data.email = form.cleaned_data['email']
+            data.subject = form.cleaned_data['subject']
+            data.message = form.cleaned_data['message']
+            data.ip = request.META.get(
+                'REMOTE_ADDR')  # GÖNDERENİN İP ADRESİNİ ALIYORUM, remote_addr olarak alıp ipye atıyorum
+            data.save()  # veritabanına kaydet
+            messages.success(request,
+                             "Mesajınız başarı ile gönderilmiştir. Teşekkür ederiz")  # tek kullanımlık mesaj alanı
+            return HttpResponseRedirect('/iletisim')
 
-  if request.method == 'POST': #form post edildiyse
-    form = ContactFormu(request.POST)
-    if form.is_valid():
-      data = ContactFormMessage() #model ile bağlantı kur
-      data.name = form.cleaned_data['name'] #fromdan bilgiyi al
-      data.email = form.cleaned_data['email']
-      data.subject = form.cleaned_data['subject']
-      data.message = form.cleaned_data['message']
-      data.ip = request.META.get('REMOTE_ADDR')  #GÖNDERENİN İP ADRESİNİ ALIYORUM, remote_addr olarak alıp ipye atıyorum
-      data.save() #veritabanına kaydet
-      messages.success(request, "Mesajınız başarı ile gönderilmiştir. Teşekkür ederiz")   #tek kullanımlık mesaj alanı
-      return HttpResponseRedirect('/iletisim')
-
-  setting = Setting.objects.get(pk=1)
-  form = ContactFormu()
-  category = Category.objects.all()
-  context = {'setting': setting, 'form': form, 'category': category}
-  return render(request, 'iletisim.html', context)
+    setting = Setting.objects.get(pk=1)
+    form = ContactFormu()
+    menu = Menu.objects.all()
+    context = {'setting': setting, 'form': form, 'menu': menu}
+    return render(request, 'iletisim.html', context)
 
 
-def category_contents(request, id, slug):
-    category = Category.objects.all()
-    categorydata = Category.objects.get(pk=id)
-    contents = Content.objects.filter(category_id=id)
-    context = {'contents': contents,
-               'category': category,
-               'categorydata': categorydata,
-               }
-    return render(request, 'contents.html', context)
+def menu(request, id):
+    try:
+        content = Content.objects.get(menu_id=id)
+        link = '/content/' + str(content.id) + '/menu'  # menu hangi içerikteyse git onu bul ve calıstır
+        return HttpResponseRedirect(link)
+    except:
+        messages.warning(request, "Hata ! İlgili içerik bulunamadı ")
+        link = '/error'
+        return HttpResponseRedirect(link)
 
-def content(request, id, slug):
-    content = Content.objects.get(category_id=id)
-    link = '/contents_detail/'+str(content.id)+'/'+content.slug
-    #return HttpResponse(link)
-    return HttpResponseRedirect(link)
 
-def contents_detail(request,id,slug):
-    category = Category.objects.all()
+
+def contentdetail(request, id, slug):
+    menu = Menu.objects.all()
     content = Content.objects.get(pk=id)
-    images = Images.objects.filter(content_id=id)
+    try:
+
+        images = Images.objects.filter(content_id=id)
+        context = {
+            'content': content,
+            'images': images,
+            'menu': menu,
+
+        }
+        return render(request, 'contents_detail.html', context)
+    except:
+        messages.warning(request, "Hata ! İlgili içerik bulunamadı ")
+        link = '/error'
+        return HttpResponseRedirect(link)
+
+
+def error(request):
+    menu = Menu.objects.all()
     context = {
-        'content': content,
-        'category': category,
-        'images': images,
+        'menu': menu,
+
     }
-    return render(request, 'contents_detail.html', context)
+    return render(request, 'error_page.html', context)

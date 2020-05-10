@@ -16,7 +16,7 @@
 
            <ul>
               <li><a href="/">Anasayfa</a></li>
-               <li><a class="active">{{ categorydata.title }} </a></li>
+               <li><a class="active">{{ content.title }} </a></li>
             </ul>
 
           </div>
@@ -29,13 +29,13 @@
 
     <ul class="nospace group overview">
 
-     {% for rs in contents %}
+     {% for rs in content %}
       <li class="one_third">
         <article>
           <h6 class="heading"> {{rs.title }} </h6>
           <a href="#"><img src="{{ rs.image.url }} " alt=""></a>
           <ul class="nospace meta">
-            <li><i class="fa fa-user"></i> <a href="#"> {{ rs.category }}</a></li>
+            <li><i class="fa fa-user"></i> <a href="#"> {{ rs.content }}</a></li>
           </ul>
           <p>{{ rs.description }}</p>
           <footer class="nospace"><a class="btn" href="/contents_detail/{{ rs.id }}/{{ rs.slug }}">Devamı.. &raquo;</a></footer>

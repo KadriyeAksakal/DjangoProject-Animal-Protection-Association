@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/static/layout/styles/fonts/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/animalEvents/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -190,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589165652785</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="User Login ve Logout işlemleri yapıldı.">
+      <created>1589237313889</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1589237313889</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -225,6 +232,7 @@
     <MESSAGE value="Yorum ekleme ve yapılmış yorumları gösterme." />
     <MESSAGE value="Content Search butonu eklendi." />
     <MESSAGE value="Ajax JQuery ile search butonunda otomatik tamamamlama yapıldı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajax JQuery ile search butonunda otomatik tamamamlama yapıldı." />
+    <MESSAGE value="User Login ve Logout işlemleri yapıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="User Login ve Logout işlemleri yapıldı." />
   </component>
 </project>

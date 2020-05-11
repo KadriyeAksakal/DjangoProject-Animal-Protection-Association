@@ -7,7 +7,7 @@ from django.shortcuts import render
 from pandas._libs import json
 
 from content.models import Content, Images, Menu, Comment
-from home.forms import SearchForm
+from home.forms import SearchForm, SignUpForm
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
@@ -161,9 +161,29 @@ def login_view(request):
             # Return an 'invalid login' error message.
             messages.warning(request, "Login Hatası ! Kullanıcı adı veya şifre yanlış")  # tek kullanımlık mesaj alanı
             return HttpResponseRedirect('/login')
-
     menu = Menu.objects.all()
     context = {
             'menu': menu,
         }
     return render(request, 'login.html', context)
+
+
+
+def signup_view(request):
+    if request.method == 'POST':  # check form post
+        form = SignUpForm(request.POST)
+        if form.is_valid():  #if else yapmıyoruz burada validation zaten uygun mu değil mi kontrol ediyor her şeyi
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return HttpResponseRedirect("/")
+
+    form = SignUpForm()
+    menu = Menu.objects.all()
+    context = {
+        'menu': menu,
+        'form': form,
+    }
+    return render(request, 'signup.html', context)

@@ -1,6 +1,6 @@
 {% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
 
-{% block title %} Giriş Yap {% endblock %}  #title olan bloğa bunu yaz
+{% block title %} Kayıt Ol {% endblock %}  #title olan bloğa bunu yaz
 {% block keywords %} {{ setting.keywords }} {% endblock %}
 {% block description %} {{ setting.description }} {% endblock %}
 
@@ -16,7 +16,7 @@
 
            <ul>
               <li><a href="/">Anasayfa</a></li>
-               <li><a class="active">Giriş Yap</a></li>
+               <li><a class="active">Kullanıcı Kayıt Ol</a></li>
             </ul>
 
           </div>
@@ -27,7 +27,7 @@
            <div class="wrapper row1">
         <main class="hoc container clear">
              <div class="one_quarter">
-                  <h6 class="heading">Giriş Yap Formu</h6>
+                  <h6 class="heading">Kayıt Ol Formu</h6>
 
                   {% if messages %}  <!--sistem mesajları böyle kullanılır eğer bir mesaj varsa mesajın türüne göre ekrana yazıyor-->
                      {% for message in messages %}
@@ -37,14 +37,26 @@
                      {% endfor %}
                   {% endif %}
 
-                  <form method="post" action="" >
-                      {% csrf_token %}  <!--güvenlik tedbiri-->
-                      <input class="btmspace-15" name="username" type="text" value="" placeholder="Kullanıcı Adı">
-                      <input class="btmspace-15" name="password" type="password" value="" placeholder="Şifre">
-                      <input type="submit" value="Login">   <!--buton-->
+                 <form method="post">
+                     {% csrf_token %}
+                     {% for field in form %}
+                         <p>
+                            {{ field.label_tag }}<br>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small style="color: grey">{{ field.help_text }}</small>
+                            {% endif %}
+                            {% for error in field.errors %}
+                                <p style="color: red"> {{ error }}</p>
+                            {% endfor %}
+                          </p>
+                     {% endfor %}
+                     <button type="submit">Kayıt Ol</button>
+                 </form>
 
-                  </form>
+
              </div>
+
         </main>
         </div>
         <!--section -->

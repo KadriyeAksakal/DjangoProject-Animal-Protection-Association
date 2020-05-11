@@ -32,6 +32,7 @@ urlpatterns = [
     path('iletisim/', views.iletisim, name='iletisim'),
     path('error/', views.error, name='error'),
     path('search/', views.content_search, name='content_search'),
+    path('search_auto/', views.content_search_auto, name='content_search_auto'),
 
     path('content/<int:id>/<slug:slug>/', views.contentdetail, name='contentdetail'),
     path('menu/<int:id>', views.menu, name='menu'),

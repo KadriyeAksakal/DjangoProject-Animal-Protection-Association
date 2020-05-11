@@ -4,20 +4,37 @@
   <div class="wrapper row1">
 
     <header id="header" class="hoc clear">
-            <div class="wrapper row1">
-                <br><br>
- <div class="content">
-      <div class="group demo">
-        <div class="one_half first">
-        <form class="example" action="/search/" method="post">
-            {% csrf_token %} <!-- formlarda kullanmak zorunlu-->
-          <input type="text" placeholder="Search.." name="query">
-        </form>
-        </div>
-        <div class="one_half" style="margin-left:900px">Üye Ol! | Giriş Yap!</div>
+      <div class="wrapper row1">
+              <script>
+                  $(function() {
+                    $("#query").autocomplete({
+                      source: "/search_auto/",
+                      select: function (event, ui) { //item selected
+                        AutoCompleteSelectHandler(event, ui)
+                      },
+                      minLength: 2,
+                    });
+                  });
+
+                  function AutoCompleteSelectHandler(event, ui)
+                  {
+                    var selectedObj = ui.item;
+                  }
+
+               </script>
+             <br><br>
+                 <div class="content">
+                  <div class="group demo">
+                    <div class="one_half first">
+                    <form class="example" action="/search/" method="post">
+                        {% csrf_token %} <!-- formlarda kullanmak zorunlu-->
+                      <input type="text" placeholder="Search.." name="query" id="query"> <!--burada tanımladığım id olan queryi yukarıda functionsta çağırdım-->
+                    </form>
+                    </div>
+                    <div class="one_half" style="margin-left:900px">Üye Ol! | Giriş Yap!</div>
+                  </div>
+                </div>
       </div>
-    </div>
-            </div>
       <div id="logo" class="fl_left">
         <h1><a href="/">HACHIKO</a></h1>
       </div>

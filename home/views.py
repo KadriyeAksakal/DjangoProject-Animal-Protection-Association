@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
+from pandas._libs import json
+
 from content.models import Content, Images, Menu, Comment
 from home.forms import SearchForm
 from home.models import Setting, ContactFormu, ContactFormMessage
@@ -122,3 +124,18 @@ def content_search(request):
             return render(request, 'contents_search.html', context)
 
     return HttpResponseRedirect('/')
+
+def content_search_auto(request):
+    if request.is_ajax():
+        q = request.GET.get('term', '')
+        content = Content.objects.filter(title__icontains=q)
+        results = []
+        for rs in content:
+            content_json = {}
+            content_json = rs.title
+            results.append(content_json)
+        data = json.dumps(results)
+    else:
+        data = 'fail'
+    mimetype = 'application/json'
+    return HttpResponse(data, mimetype)

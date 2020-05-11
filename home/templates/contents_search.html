@@ -1,0 +1,53 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} Content Search Results {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %} {{ content.keywords }} {% endblock %}
+{% block description %} {{ content.description }} {% endblock %}
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+{% endblock %}
+
+{% block content %}
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb" class="hoc clear">
+
+           <ul>
+              <li><a href="/">Anasayfa</a></li>
+               <li><a class="active">{{search.title}}</a></li>
+            </ul>
+
+          </div>
+
+        <!-- /BREADCRUMB-->
+
+        <!--section -->
+      <div class="wrapper row3">
+        <main class="hoc container clear">
+
+         <div class="scrollable">
+            <table>
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Content Name</th>
+                  <th>Description</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for rs in contents %}
+                <tr>
+                  <td><a href="/content/{{rs.id}}/{{rs.slug}}"><img src="{{ rs.image.url }}" style="height:200px, width:200px" alt=""></a></td>
+                  <td><h4><a href="/content/{{rs.id}}/{{rs.slug}}/{{rs.title}}"></a> {{rs.title}} </h4></td>
+                  <td><a href="/content/{{rs.id}}/{{rs.slug}}/{{rs.description}}"></a> {{rs.description}}</td>
+                  <td><a href="/content/{{rs.content_id}}/{{rs.content_slug}}">{{rs.type}}</a></td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+      </div>
+        </main>
+
+        </div>
+        <!--section -->
+{% endblock %}

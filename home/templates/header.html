@@ -1,11 +1,29 @@
 {% load static %}
 
+
   <div class="wrapper row1">
+
     <header id="header" class="hoc clear">
+            <div class="wrapper row1">
+                <br><br>
+ <div class="content">
+      <div class="group demo">
+        <div class="one_half first">
+        <form class="example" action="/search/" method="post">
+            {% csrf_token %} <!-- formlarda kullanmak zorunlu-->
+          <input type="text" placeholder="Search.." name="query">
+        </form>
+        </div>
+        <div class="one_half" style="margin-left:900px">Üye Ol! | Giriş Yap!</div>
+      </div>
+    </div>
+            </div>
       <div id="logo" class="fl_left">
         <h1><a href="/">HACHIKO</a></h1>
       </div>
+
       <nav id="mainav" class="fl_right">
+
         <ul class="clear">
           <li class="active"><a href="/">Anasayfa</a></li>
           <li><a href="/hakkimizda">Hakkımızda</a></li>
@@ -24,6 +42,10 @@
           <li><a href="/referanslar">Referanslarımız</a></li>
           <li><a href="/iletisim">İletişim</a></li>
         </ul>
+
       </nav>
+
+
     </header>
+
   </div>

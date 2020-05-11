@@ -4,6 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from content.models import Content, Images, Menu, Comment
+from home.forms import SearchForm
 from home.models import Setting, ContactFormu, ContactFormMessage
 
 
@@ -103,3 +104,21 @@ def error(request):
 
     }
     return render(request, 'error_page.html', context)
+
+
+def content_search(request):
+    if request.method == 'POST':  #check form post
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            content = Content.objects.all()
+            menu= Menu.objects.all()
+            query = form.cleaned_data['query']  #formdan bilgiyi al
+            contents = Content.objects.filter(title__icontains=query) #Select * from content where title like %query%    #icontains=büyük küçük harf dikkate alma demek
+            context = {
+                'content': content,
+                'menu': menu,
+                'contents': contents,
+                }
+            return render(request, 'contents_search.html', context)
+
+    return HttpResponseRedirect('/')

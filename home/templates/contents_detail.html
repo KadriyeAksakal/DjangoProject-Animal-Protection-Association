@@ -48,7 +48,7 @@
 
             <!-- yorum vs eklenecek-->
      <div id="comments">
-        <h2>Comments</h2>
+        <h2>Yorumlar</h2>
         <ul>
             {% for rs in comments %}
                <li>
@@ -85,28 +85,28 @@
 
         </ul>
 
-        <h2>Write A Comment</h2>
+        <h2>Bir yorum yaz</h2>
         <form action="/content/addcomment/{{content.id}}" method="post">
             {% csrf_token %}
           <div class="one_third first">
-            <label for="id_subject">Subject <span>*</span></label>
-            <input type="text" name="subject" id="id_subject" placeholder="Subject" value="" size="22" required>
+            <label for="id_subject">Konu <span>*</span></label>
+            <input type="text" name="subject" id="id_subject" placeholder="Konu" value="" size="22" required>
           </div>
 
           <div class="block clear">
-            <label for="id_comment">Your Comment</label>
-            <textarea name="comment" id="id_comment" cols="25" rows="10" placeholder="Your review"></textarea>
+            <label for="id_comment">Sizin yorumunuz</label>
+            <textarea name="comment" id="id_comment" cols="25" rows="10" placeholder="Sizin görüşünüz"></textarea>
           </div>
           <div>
            {% if user.id is not None %}
-            <input type="submit" name="submit" value="Submit Form">
+            <input type="submit" name="submit" value="Yorumu Kaydet">
            {% else %}
               Yorum Eklemek için  <a href="/login"> Login </a>  olunuz!
            {% endif %}
           </div>
         </form>
       </div>
-
+      </div>
         </main>
 
         </div>

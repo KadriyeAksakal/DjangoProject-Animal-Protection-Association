@@ -31,6 +31,7 @@ urlpatterns = [
     path('referanslar/', views.referanslar, name='referanslar'),
     path('iletisim/', views.iletisim, name='iletisim'),
     path('error/', views.error, name='error'),
+    path('search/', views.content_search, name='content_search'),
 
     path('content/<int:id>/<slug:slug>/', views.contentdetail, name='contentdetail'),
     path('menu/<int:id>', views.menu, name='menu'),

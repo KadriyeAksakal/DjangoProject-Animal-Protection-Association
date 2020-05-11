@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/layout/styles/search.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/contents_search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animalEvents/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/contents_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contents_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -38,13 +38,15 @@
     <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\animalEvents\home\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Django\animalEvents\home\static\layout\scripts" />
+      <recent name="C:\Django\animalEvents\home\static\layout\styles" />
       <recent name="C:\Django\animalEvents\home\templates" />
       <recent name="C:\Django\animalEvents\home\static\css" />
       <recent name="C:\Django\animalEvents\home" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Django\animalEvents\home\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -168,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589112210084</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Yorum ekleme ve yapılmış yorumları gösterme.">
+      <created>1589121474494</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1589121474494</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -200,6 +209,7 @@
     <MESSAGE value="Duyuru ve etkinlik sayfaları eklendi. İçerikleri düzenlendi. Sidebar silindi." />
     <MESSAGE value="Kategoriler eklendi ve içerikleri oluşturuldu. Daha fazla etkinlik ve duyuru eklendi." />
     <MESSAGE value="Menu, etkinlik, duyuru içerik yönetim sistemi eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu, etkinlik, duyuru içerik yönetim sistemi eklendi." />
+    <MESSAGE value="Yorum ekleme ve yapılmış yorumları gösterme." />
+    <option name="LAST_COMMIT_MESSAGE" value="Yorum ekleme ve yapılmış yorumları gösterme." />
   </component>
 </project>

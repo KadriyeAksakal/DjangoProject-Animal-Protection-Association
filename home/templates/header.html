@@ -4,8 +4,9 @@
   <div class="wrapper row1">
 
     <header id="header" class="hoc clear">
+
       <div class="wrapper row1">
-              <script>
+              <script>      //otomatik arama oluşturmak için bunu yapıyoruz.
                   $(function() {
                     $("#query").autocomplete({
                       source: "/search_auto/",
@@ -23,18 +24,33 @@
 
                </script>
              <br><br>
-                 <div class="content">
-                  <div class="group demo">
-                    <div class="one_half first">
-                    <form class="example" action="/search/" method="post">
+
+           <div class="group demo">
+
+              <div class="one_half first">
+                 <form class="example" action="/search/" method="post">
                         {% csrf_token %} <!-- formlarda kullanmak zorunlu-->
-                      <input type="text" placeholder="Search.." name="query" id="query"> <!--burada tanımladığım id olan queryi yukarıda functionsta çağırdım-->
-                    </form>
-                    </div>
-                    <div class="one_half" style="margin-left:900px">Üye Ol! | Giriş Yap!</div>
-                  </div>
+                            <input type="text" placeholder="Search.." name="query" id="query"> <!--burada tanımladığım id olan queryi yukarıda functionsta çağırdım-->
+                 </form>
+             </div>
+                <div class="one_half" style="margin-left:900px">
+                  <!-- Account -->
+                 {% if user.id is not None %}
+                   <i class="fa fa-user-o"></i>
+                   <strong class=""> {{ user.first_name }} </strong>/ <strong class=""><a href="logout">Logout</a> </strong><br>
+                 {% else %}
+                    <a href="/login/">Login</a>/<a href="/join/">Join</a>
+                 {% endif %}
+
+           </li>
+            <!-- Account -->
                 </div>
-      </div>
+                           <img src="{%static 'images/home-p2.jpg' %}" >
+
+          </div>
+        </div>
+        <br>
+
       <div id="logo" class="fl_left">
         <h1><a href="/">HACHIKO</a></h1>
       </div>
@@ -58,6 +74,8 @@
 
           <li><a href="/referanslar">Referanslarımız</a></li>
           <li><a href="/iletisim">İletişim</a></li>
+
+
         </ul>
 
       </nav>

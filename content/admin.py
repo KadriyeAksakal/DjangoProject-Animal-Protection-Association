@@ -17,7 +17,7 @@ class ContentAdmin(admin.ModelAdmin):
      list_display = ['title', 'detail', 'image_tag', 'status']   #göstermek istediklerimizi yazarız buraya
      list_filter = ['status', 'type'] #belirli bir şeye göre filtrelemek istersek
      inlines = [ContentImageInline] #buraya eklediğimizdesadece ilgili content ile ilgili imageler eklenir
-     prepopulated_fields = {'slug': ('title',)}
+     prepopulated_fields = {'slug': ('title',)}  #otomatik slag olusturması icin
 
 
 

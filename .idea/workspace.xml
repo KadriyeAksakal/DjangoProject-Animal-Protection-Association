@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/home/static/layout/styles/fonts/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/animalEvents/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,11 +41,11 @@
       <recent name="C:\Django\animalEvents\home\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Django\animalEvents\home\static\images" />
       <recent name="C:\Django\animalEvents\home\static\layout\scripts" />
       <recent name="C:\Django\animalEvents\home\static\layout\styles" />
       <recent name="C:\Django\animalEvents\home\templates" />
       <recent name="C:\Django\animalEvents\home\static\css" />
-      <recent name="C:\Django\animalEvents\home" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -180,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589162588170</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Ajax JQuery ile search butonunda otomatik tamamamlama yapıldı.">
+      <created>1589165652785</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1589165652785</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -214,6 +224,7 @@
     <MESSAGE value="Menu, etkinlik, duyuru içerik yönetim sistemi eklendi." />
     <MESSAGE value="Yorum ekleme ve yapılmış yorumları gösterme." />
     <MESSAGE value="Content Search butonu eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Content Search butonu eklendi." />
+    <MESSAGE value="Ajax JQuery ile search butonunda otomatik tamamamlama yapıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajax JQuery ile search butonunda otomatik tamamamlama yapıldı." />
   </component>
 </project>

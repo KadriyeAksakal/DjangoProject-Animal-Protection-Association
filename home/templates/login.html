@@ -1,0 +1,51 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} Giriş Yap {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+{% endblock %}
+
+
+
+{% block content %}
+        <!-- BREADCRUMB -->
+         <div id="breadcrumb" class="hoc clear">
+
+           <ul>
+              <li><a href="/">Anasayfa</a></li>
+               <li><a class="active">Giriş Yap</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <!-- /BREADCRUMB-->
+
+        <!--section -->
+           <div class="wrapper row1">
+        <main class="hoc container clear">
+             <div class="one_quarter">
+      <h6 class="heading">Giriş Yap Formu</h6>
+
+      {% if messages %}  <!--sistem mesajları böyle kullanılır eğer bir mesaj varsa mesajın türüne göre ekrana yazıyor-->
+         {% for message in messages %}
+             <div class="alert alert-{{message.tags}}" role="alert">  <!--otomatik olarak css oluşturuyor-->
+                 {{ message }}
+             </div>
+         {% endfor %}
+      {% endif %}
+
+      <form method="post" action="" >
+          {% csrf_token %}  <!--güvenlik tedbiri-->
+          <input class="btmspace-15" name="username" type="text" value="" placeholder="Kullanıcı Adı">
+          <input class="btmspace-15" name="password" type="password" value="" placeholder="Şifre">
+          <input type="submit" value="Login">   <!--buton-->
+
+      </form>
+
+        </main>
+        </div>
+        <!--section -->
+{% endblock %}

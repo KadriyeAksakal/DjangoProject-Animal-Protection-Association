@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth import logout, authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
@@ -52,11 +53,9 @@ def iletisim(request):
             data.email = form.cleaned_data['email']
             data.subject = form.cleaned_data['subject']
             data.message = form.cleaned_data['message']
-            data.ip = request.META.get(
-                'REMOTE_ADDR')  # GÖNDERENİN İP ADRESİNİ ALIYORUM, remote_addr olarak alıp ipye atıyorum
+            data.ip = request.META.get('REMOTE_ADDR')  # GÖNDERENİN İP ADRESİNİ ALIYORUM, remote_addr olarak alıp ipye atıyorum
             data.save()  # veritabanına kaydet
-            messages.success(request,
-                             "Mesajınız başarı ile gönderilmiştir. Teşekkür ederiz")  # tek kullanımlık mesaj alanı
+            messages.success(request, "Mesajınız başarı ile gönderilmiştir. Teşekkür ederiz")  # tek kullanımlık mesaj alanı
             return HttpResponseRedirect('/iletisim')
 
     setting = Setting.objects.get(pk=1)
@@ -139,3 +138,32 @@ def content_search_auto(request):
         data = 'fail'
     mimetype = 'application/json'
     return HttpResponse(data, mimetype)
+
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')   #anasayfaya gitsin
+
+
+
+def login_view(request):
+    if request.method == 'POST':  # check form post
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            return HttpResponseRedirect('/')  #  başarılı olursa anasayfaya gitsin
+
+        else:
+            # Return an 'invalid login' error message.
+            messages.warning(request, "Login Hatası ! Kullanıcı adı veya şifre yanlış")  # tek kullanımlık mesaj alanı
+            return HttpResponseRedirect('/login')
+
+    menu = Menu.objects.all()
+    context = {
+            'menu': menu,
+        }
+    return render(request, 'login.html', context)

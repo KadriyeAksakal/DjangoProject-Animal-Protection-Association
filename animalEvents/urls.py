@@ -33,6 +33,8 @@ urlpatterns = [
     path('error/', views.error, name='error'),
     path('search/', views.content_search, name='content_search'),
     path('search_auto/', views.content_search_auto, name='content_search_auto'),
+    path('logout/', views.logout_view, name='logout_view'),
+    path('login/', views.login_view, name='login_view'),
 
     path('content/<int:id>/<slug:slug>/', views.contentdetail, name='contentdetail'),
     path('menu/<int:id>', views.menu, name='menu'),

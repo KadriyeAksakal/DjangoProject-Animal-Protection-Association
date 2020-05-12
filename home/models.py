@@ -76,6 +76,7 @@ class ContactFormu(ModelForm):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)  #ilişki demektir user_id için bir tane oluşturuyor
+    email = models.EmailField(blank=True, max_length=200)
     phone = models.CharField(blank=True, max_length=20)
     address = models.CharField(blank=True, max_length=150)
     city = models.CharField(blank=True, max_length=20)
@@ -96,7 +97,7 @@ class UserProfile(models.Model):
 class UserProfileFormu(ModelForm):
     class Meta:
         model = UserProfile  #bu forma ait
-        fields = ['phone', 'address', 'city', 'country', 'image']  #bu elemanlar gözükecek
+        fields = ['phone', 'email', 'address', 'city', 'country', 'image']  #bu elemanlar gözükecek
 
 
 

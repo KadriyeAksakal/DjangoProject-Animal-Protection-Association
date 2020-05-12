@@ -1,0 +1,70 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} {{ profile.user_name }} {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+{% endblock %}
+
+
+
+{% block content %}
+        <!-- BREADCRUMB -->
+         <div id="breadcrumb" class="hoc clear">
+
+           <ul>
+              <li><a href="/">Anasayfa</a></li>
+               <li><a class="active">Kullanıcı Profili</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <!-- /BREADCRUMB-->
+
+        <!--section -->
+           <div class="wrapper row3">
+             <main class="hoc container clear">
+                 <div class="one_quarter">
+                      {% include "user_panel.html" %}
+                 </div>
+                 <div class="two_quarter">
+                     <h6 class="heading">Kullanıcı Bilgileri</h6>
+                          <div class="scrollable">
+                            <table>
+                                <tr>
+                                  <th></th>
+                                  <td><img src="{{ profile.image.url }}" alt=""></td>
+                                </tr>
+                                <tr>
+                                  <th>Ad Soyad</th>
+                                  <td>{{ profile.user_name }}</td>
+                                </tr>
+                                <tr>
+                                  <th>Email</th>
+                                  <td>{{ profile.email }}</td>
+                                </tr>
+                                <tr>
+                                  <th>Telefon</th>
+                                  <td>{{ profile.phone }}</td>
+                                </tr>
+                                <tr>
+                                  <th>Adres</th>
+                                  <td>{{ profile.address }}</td>
+                                </tr>
+                                <tr>
+                                  <th>Şehir</th>
+                                  <td>{{ profile.city }}</td>
+                                </tr>
+                                <tr>
+                                  <th>Ülke</th>
+                                  <td>{{ profile.country }}</td>
+                                </tr>
+                            </table>
+                          </div>
+                 </div>
+            </main>
+        </div>
+        <!--section -->
+{% endblock %}

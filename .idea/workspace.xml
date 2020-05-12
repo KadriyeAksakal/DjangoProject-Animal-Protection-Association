@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/user/templates/user_panel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animalEvents/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animalEvents/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -32,11 +37,13 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/user/templates" />
     <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\animalEvents\user\templates" />
+      <recent name="C:\Django\animalEvents\user" />
       <recent name="C:\Django\animalEvents\home\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -203,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589240536562</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Üye Profil ile ek bilgiler ve resim ekleme yapıldı.">
+      <created>1589242809977</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589242809977</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -240,6 +254,7 @@
     <MESSAGE value="Ajax JQuery ile search butonunda otomatik tamamamlama yapıldı." />
     <MESSAGE value="User Login ve Logout işlemleri yapıldı." />
     <MESSAGE value="Üye kayıt formu yapıldı." />
-    <option name="LAST_COMMIT_MESSAGE" value="Üye kayıt formu yapıldı." />
+    <MESSAGE value="Üye Profil ile ek bilgiler ve resim ekleme yapıldı." />
+    <option name="LAST_COMMIT_MESSAGE" value="Üye Profil ile ek bilgiler ve resim ekleme yapıldı." />
   </component>
 </project>

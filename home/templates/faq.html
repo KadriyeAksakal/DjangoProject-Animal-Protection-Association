@@ -1,0 +1,50 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} Sıkça Sorulan Sorular {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %}  {% endblock %}
+{% block description %}  {% endblock %}
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  } );
+  </script>
+
+{% endblock %}
+
+{% block content %}
+        <!-- BREADCRUMB -->
+        <div id="breadcrumb" class="hoc clear">
+
+           <ul>
+              <li><a href="/">Anasayfa</a></li>
+               <li><a class="active">Sıkça Sorulan Sorular</a></li>
+            </ul>
+
+          </div>
+
+        <!-- /BREADCRUMB-->
+
+        <!--section -->
+      <div class="wrapper row3">
+        <main class="hoc container clear">
+
+            <div id="accordion">
+                {% for rs in faq %}
+              <h3> {{ rs.question }}</h3>
+              <div>
+                <p>{{ rs.answer }}</p>
+              </div>
+              {% endfor %}
+            </div>
+
+        </main>
+
+        </div>
+        <!--section -->
+{% endblock %}

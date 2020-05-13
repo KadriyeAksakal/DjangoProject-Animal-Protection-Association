@@ -8,7 +8,7 @@ from pandas._libs import json
 
 from content.models import Content, Images, Menu, Comment
 from home.forms import SearchForm, SignUpForm
-from home.models import Setting, ContactFormu, ContactFormMessage
+from home.models import Setting, ContactFormu, ContactFormMessage, FAQ
 
 
 def index(request):
@@ -102,7 +102,6 @@ def error(request):
     menu = Menu.objects.all()
     context = {
         'menu': menu,
-
     }
     return render(request, 'error_page.html', context)
 
@@ -187,3 +186,14 @@ def signup_view(request):
         'form': form,
     }
     return render(request, 'signup.html', context)
+
+
+def faq(request):
+    menu = Menu.objects.all()
+    faq = FAQ.objects.all().order_by('contentnumber')
+    context = {
+        'menu': menu,
+        'faq': faq,
+
+    }
+    return render(request, 'faq.html', context)

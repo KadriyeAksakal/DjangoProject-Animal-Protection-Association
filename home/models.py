@@ -101,3 +101,19 @@ class UserProfileFormu(ModelForm):
 
 
 
+
+class FAQ(models.Model):   #sık sorulan sorular bolumu
+    STATUS = (  # açılan kutuda buranın gelmesini istiyoruz
+        ('True', 'Evet'),
+        ('False', 'Hayır'),
+    )
+    contentnumber =models.IntegerField()
+    question = models.CharField(max_length=150) #charfield=uzunluk, alan türü
+    answer = models.TextField() #sınırlandırmayı kaldırdım o zamanda tekrar migrations yapmam lazım
+    status = models.CharField(max_length=10, choices=STATUS)
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
+
+    # pythonın görmemiz için bize bir şey döndürmesini istiyoruz
+    def __str__(self):
+        return self.question

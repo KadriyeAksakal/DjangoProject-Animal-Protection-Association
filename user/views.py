@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from content.models import Menu, Content, ContentForm
+from content.models import Menu, Content, ContentForm, Comment
 from home.models import UserProfile
 from user.forms import UserUpdateForm, ProfileUpdateForm
 
@@ -36,8 +36,7 @@ def user_update(request):
         menu = Menu.objects.all()
         current_user = request.user  # Access user session information
         user_form = UserUpdateForm(instance=request.user)  # userla ilişki kursun diyorum
-        profile_form = ProfileUpdateForm(
-            instance=request.user.userprofile)  # "userprofile" model -> OneToOneField relatinon with user =>yani user tablosundaki userprofileı onetoone ilişkisine göre getir diyorum
+        profile_form = ProfileUpdateForm(instance=request.user.userprofile)  # "userprofile" model -> OneToOneField relatinon with user =>yani user tablosundaki userprofileı onetoone ilişkisine göre getir diyorum
     context = {
         'menu': menu,
         'user_form': user_form,
@@ -67,12 +66,27 @@ def change_password(request):
         })
 
 
+
+@login_required(login_url='/login')  # check login, login olup olmadığını kontrol ediyorum
 def comments(request):
-    return HttpResponse("yorumlar")
+    menu = Menu.objects.all()
+    current_user = request.user  # Access User Session Information
+    comments = Comment.objects.filter(user_id=current_user.id)
+    context = {
+        'menu': menu,
+        'comments': comments,
+    }
+    return render(request, 'user_comments.html', context)
 
 
-def deletecomment(request):
-    return HttpResponse("yorumlar")
+
+
+@login_required(login_url='/login')  # check login, login olup olmadığını kontrol ediyorum
+def deletecomment(request,id):
+    current_user = request.user
+    Comment.objects.filter(id=id, user_id=current_user.id).delete()
+    messages.success(request, 'Yorum silindi...')
+    return HttpResponseRedirect("/user/comments")
 
 
 @login_required(login_url='/login')  # check login, login olup olmadığını kontrol ediyorum
@@ -126,17 +140,17 @@ def contents(request):
 
 
 @login_required(login_url='/login')  # check login, login olup olmadığını kontrol ediyorum
-def contentedit(request):
+def contentedit(request,id):
     content = Content.objects.get(id=id) #mevcut içeriğin id'sini gönderiyorum
     if request.method == 'POST':
         form = ContentForm(request.POST, request.FILES, instance=content)  # fileupload varsa request.FILES yapmazsak formumuz çalışmaz
         if form.is_valid():
             form.save()  # veritabanına kaydet
             messages.success(request, 'İçeriğiniz başarılı bir şekilde güncellendi !')
-            return HttpResponseRedirect("/user/contents")
+            return HttpResponseRedirect("/user/contents")  #hata yoksa listeye gönder
         else:
             messages.error(request, 'İçerik Form Hatası : ' + str(form.errors))  # bunu buraya yazabilmemiz için stringe çevirmemiz lazım on yüzden str yazıyoruz
-            return HttpResponseRedirect('/user/contentedit/'+str(id)) #id'yi tekrar oluşturmam lazım
+            return HttpResponseRedirect('/user/contentedit/' + str(id)) #id'yi tekrar oluşturmam lazım
     else:
         menu = Menu.objects.all()
         form = ContentForm(instance=content)  # content form ile ilişki kuruyorum, sorgulanan contentle formu dolduruyorum

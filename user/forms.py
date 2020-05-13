@@ -1,6 +1,7 @@
+from django import forms
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User
-from django.forms import TextInput, forms, Select, FileInput
+from django.forms import TextInput, Select, FileInput
 
 from home.models import UserProfile
 

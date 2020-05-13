@@ -14,16 +14,16 @@ from home.models import Setting, ContactFormu, ContactFormMessage
 def index(request):
     setting = Setting.objects.get(pk=1)
     menu = Menu.objects.all()
-    sliderdata = Content.objects.all().order_by('-id')[:4]  # tüm verileri getiriyoruz, 4 tanesini gösteriyorum
-    activitydata = Content.objects.filter(type='etkinlik').order_by('-id')[:3]
-    announcementdata = Content.objects.filter(type='duyuru').order_by('?')[:3]
-    categoriesdata = Content.objects.filter(type='kategori').order_by('?')[:3]  # ? random olarak getirir
+    sliderdata = Content.objects.filter(status='True').order_by('-id')[:4]  # tüm verileri getiriyoruz, 4 tanesini gösteriyorum
+    activitydata = Content.objects.filter(type='etkinlik', status='True').order_by('-id')[:3]
+    announcementdata = Content.objects.filter(type='duyuru', status='True').order_by('?')[:3]
+    newsdata = Content.objects.filter(type='haber', status='True').order_by('?')[:3]  # ? random olarak getirir
     context = {'setting': setting,
                'page': 'home',
                'sliderdata': sliderdata,
                'activitydata': activitydata,
                'announcementdata': announcementdata,
-               'categoriesdata': categoriesdata,
+               'newsdata': newsdata,
                'menu': menu,
 
                }

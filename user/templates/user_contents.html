@@ -1,0 +1,70 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} {{ profile.user_name }} İçerikler {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+{% endblock %}
+
+
+
+{% block content %}
+        <!-- BREADCRUMB -->
+         <div id="breadcrumb" class="hoc clear">
+
+           <ul>
+              <li><a href="/">Anasayfa</a></li>
+               <li><a class="active">Kullanıcı İçerikleri</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <!-- /BREADCRUMB-->
+
+        <!--section -->
+           <div class="wrapper row3">
+             <main class="hoc container clear">
+                 <div class="one_quarter">
+                      {% include "user_panel.html" %}
+                 </div>
+                 <div class="two_quarter">
+                     <h6 class="heading">Kullanıcı İçerik Listesi</h6>
+                      <div class="one_third first">
+                         <button><a href="/user/addcontent" class="primary-btn">İçerik Ekle</a></button>
+                      </div>
+                      <br><br>
+                          <div class="scrollable">
+                            <table>
+                                <tr>
+                                  <th>Fotoğraf</th>
+                                  <th>Başlık</th>
+                                  <th>Tip</th>
+                                  <th>Menü</th>
+                                  <th>Durum</th>
+                                  <th>Tarih</th>
+                                  <th>Detay</th>
+                                  <th>Düzenle</th>
+                                  <th>Sil</th>
+                                </tr>
+                                {% for rs in contents %}
+                                <tr>
+                                  <td><a href="/content/{{ rs.id }}/{{ rs.slug }}"><img src=" {{ rs.image.url }} " style="height:30px;"></a></td>
+                                  <td><a href="/content/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></td>
+                                  <td>{{ rs.type }}</td>
+                                  <td>{{ rs.menu.title }}</td>
+                                  <td>{{ rs.status }}</td>
+                                  <td>{{ rs.create_at }}</td>
+                                  <td>{{ rs.detail|safe }}</td>
+                                  <td><button><a href="/user/contentedit/{{rs.id}}" class="primary-btn">Düzenle</a></button></td>
+                                  <td><button><a onclick="return confirm('Silmek istediğinize emin misiniz?')" href="/user/contentdelete/{{rs.id}}" class="primary-btn">Sil</a></button></td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                          </div>
+                 </div>
+            </main>
+        </div>
+        <!--section -->
+{% endblock %}

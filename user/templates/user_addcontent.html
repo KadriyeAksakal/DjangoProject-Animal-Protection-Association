@@ -1,0 +1,52 @@
+{% extends "homebase.html" %} #burada diyorum ki ben bu sayfada homebase bağlı çalışacağım
+
+{% block title %} {{ profile.user_name }} İçerik Ekle {% endblock %}  #title olan bloğa bunu yaz
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+    {% load static %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script> <!--çalışabilmesi için home/static sayfasına ckeditor4 dosyası yüklendi-->
+{% endblock %}
+
+
+
+{% block content %}
+        <!-- BREADCRUMB -->
+         <div id="breadcrumb" class="hoc clear">
+
+           <ul>
+              <li><a href="/">Anasayfa</a></li>
+               <li><a class="active">Kullanıcı İçerik Ekleme</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <!-- /BREADCRUMB-->
+
+        <!--section -->
+           <div class="wrapper row3">
+             <main class="hoc container clear">
+                 <div class="one_quarter">
+                      {% include "user_panel.html" %}
+                 </div>
+                 <div class="two_quarter">
+                     <h6 class="heading">İçerik Ekle</h6>
+                           <form method="POST" enctype="multipart/form-data"> <!--formda upload olacağı için multipart yapıyoruz-->
+                                 {% csrf_token %}
+                                    <fieldset class="from-group">
+                                        {{ form.media }} <!-- ckeditor ayarlarını getirir =>yukarıdaki son iki satır buna denk gelir-->
+                                        {{ form.as_p }}
+                                    </fieldset>
+                                    <div class="form-group">
+                                        <button class="primary-btn" type="submit">Kaydet</button>
+                                    </div>
+                           </form>
+                 </div>
+            </main>
+        </div>
+        <!--section -->
+{% endblock %}

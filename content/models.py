@@ -1,3 +1,4 @@
+from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.auth.models import User
 from django.db import models
@@ -8,6 +9,8 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from mptt.fields import TreeForeignKey
 from mptt.models import MPTTModel
+from django.forms import TextInput, Select, FileInput
+
 
 
 class Menu(MPTTModel):
@@ -37,18 +40,19 @@ class Menu(MPTTModel):
 
 
 
-
+TYPE = ( #global olarak çağırabilmek için dışarı aldım
+        ('menu', 'menu'),
+        ('haber', 'haber'),
+        ('etkinlik', 'etkinlik'),
+        ('duyuru', 'duyuru'),
+    )
 
 class Content(models.Model):
     STATUS = (  #açılan kutuda buranın gelmesini istiyoruz
         ('True', 'Evet'),
         ('False', 'Hayır'),
     )
-    TYPE = (
-        ('menu', 'menu'),
-        ('etkinlik', 'etkinlik'),
-        ('duyuru', 'duyuru'),
-    )
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True) #usera içerik ekleme yetkisi verdiğimiz için bunu yazıyoruz
     menu = models.OneToOneField(Menu, null=True, blank=True, on_delete=models.CASCADE) #relation with menu table
     title = models.CharField(max_length=100) #charfield=uzunluk, alan türü
     keywords = models.CharField(blank=True, max_length=255)
@@ -73,6 +77,25 @@ class Content(models.Model):
 
     def get_absolute_url(self):
         return reverse('content_detail', kwargs={'slug': self.slug})  #otomatik slug olusturma
+
+
+
+
+class ContentForm(ModelForm):
+    class Meta:
+        model = Content
+        fields = ['type', 'title', 'slug', 'keywords', 'description', 'image', 'detail']  # bu elemanlar gözükecek
+        widgets = {
+            'type': Select(attrs={'class': 'input', 'placeholder': 'type'}, choices=TYPE),
+            'title': TextInput(attrs={'class': 'input', 'placeholder': 'title'}),
+            'slug': TextInput(attrs={'class': 'input', 'placeholder': 'slug'}),
+            'keywords': TextInput(attrs={'class': 'input', 'placeholder': 'keywords'}),
+            'description': TextInput(attrs={'class': 'input', 'placeholder': 'description'}),
+            'image': FileInput(attrs={'class': 'input', 'placeholder': 'image'}),
+            'detail': CKEditorWidget(),  #ckeditor input, widget içerisinde kullandığım için böyle yazıyorum
+        }
+
+
 
 
 

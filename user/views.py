@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from content.models import Menu, Content, ContentForm, Comment
+from content.models import Menu, Content, ContentForm, Comment, Images, ContentImageForm
 from home.models import UserProfile
 from user.forms import UserUpdateForm, ProfileUpdateForm
 
@@ -168,3 +168,31 @@ def contentdelete(request,id):
     Content.objects.filter(id=id, user_id=current_user.id).delete()
     messages.success(request, 'İçerik silindi...')
     return HttpResponseRedirect("/user/contents")
+
+
+def contentaddimage(request,id):
+    if request.method == 'POST':
+        lasturl = request.META.get('HTTP_REFERER') #post etmeden önceki url'i alsın diye bunu yaptım yani açılan pencerede formu göndermeden öndeki açılan sayfa
+        form = ContentImageForm(request.POST, request.FILES)  # fileupload varsa request.FILES yapmazsak formumuz çalışmaz
+        if form.is_valid():
+            data = Images()  # model ile bağlantı kur
+            data.title = form.cleaned_data['title']
+            data.content_id = id
+            data.image = form.cleaned_data['image']
+            data.save()  # veritabanına kaydet
+            messages.success(request, 'Fotoğrafınız başarılı bir şekilde yüklendi !')
+            return HttpResponseRedirect(lasturl)
+        else:
+            messages.warning(request, 'Form Hatası : ' + str(form.errors))  # bunu buraya yazabilmemiz için stringe çevirmemiz lazım on yüzden str yazıyoruz
+            return HttpResponseRedirect(lasturl)
+    else:
+        content = Content.objects.get(id=id)
+        images = Images.objects.filter(content_id=id)
+        form = ContentImageForm()
+        context = {
+            'content': content,
+            'images': images,
+            'form': form,
+        }
+        return render(request, 'content_gallery.html', context)
+

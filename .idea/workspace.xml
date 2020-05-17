@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/migrations/0009_faq.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0010_auto_20200513_0740.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/migrations/0011_faq_contentnumber.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/templates/faq.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/images/home-p2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/static/images/photo-gallery-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Sahiplendirilmemis6_n58slFM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/content_gallery.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animalEvents/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/animalEvents/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/homebase.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/homebase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/templates/user_contents.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_contents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,21 +41,22 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/home/static/images/demo" />
     <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Django\animalEvents\home\templates" />
-      <recent name="C:\Django\animalEvents\user\templates" />
-      <recent name="C:\Django\animalEvents\user" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Django\animalEvents\user\templates" />
       <recent name="C:\Django\animalEvents\home\static\images" />
+      <recent name="C:\Django\animalEvents\user\templates" />
       <recent name="C:\Django\animalEvents\home\static\layout\scripts" />
       <recent name="C:\Django\animalEvents\home\static\layout\styles" />
       <recent name="C:\Django\animalEvents\home\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Django\animalEvents\home\static\images\demo" />
+      <recent name="C:\Django\animalEvents\home\templates" />
+      <recent name="C:\Django\animalEvents\user\templates" />
+      <recent name="C:\Django\animalEvents\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -251,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589343865850</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Sıkça sorulan sorular accordion menu eklendi.">
+      <created>1589348885626</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1589348885626</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -294,6 +300,7 @@
     <MESSAGE value="Üye bilgilerini ve şifresini güncelleme." />
     <MESSAGE value="Üye Ckeditör ile içerik ekleme, listeleme, düzenleme ve silme eklendi." />
     <MESSAGE value="Üye yorumları listeleme, silme eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Üye yorumları listeleme, silme eklendi." />
+    <MESSAGE value="Sıkça sorulan sorular accordion menu eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sıkça sorulan sorular accordion menu eklendi." />
   </component>
 </project>

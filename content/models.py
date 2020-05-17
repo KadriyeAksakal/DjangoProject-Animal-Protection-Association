@@ -95,11 +95,6 @@ class ContentForm(ModelForm):
             'detail': CKEditorWidget(),  #ckeditor input, widget içerisinde kullandığım için böyle yazıyorum
         }
 
-
-
-
-
-
 class Images(models.Model):
     content = models.ForeignKey(Content, on_delete=models.CASCADE)
     title = models.CharField(max_length=50, blank=True) #charfield=uzunluk, alan türü, blank=true dersek boş geçmemize izin verir
@@ -111,6 +106,12 @@ class Images(models.Model):
     def image_tag(self):
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
     image_tag.short_description = 'Image'
+
+
+class ContentImageForm(ModelForm):   #eğer bir validation yani kontrol yapmak için kullanmak istersek ya da çağırmak istersek diye form yaptık
+    class Meta:
+        model =Images
+        fields = ['title', 'image']
 
 
 class Comment(models.Model):

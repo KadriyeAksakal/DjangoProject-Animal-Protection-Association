@@ -8,6 +8,7 @@
     <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
 {% endblock %}
 
+{% load static %}
 
 
 {% block content %}
@@ -42,9 +43,9 @@
                                   <th>Başlık</th>
                                   <th>Tip</th>
                                   <th>Menü</th>
+                                  <th>Galeri</th>
                                   <th>Durum</th>
                                   <th>Tarih</th>
-                                  <th>Detay</th>
                                   <th>Düzenle</th>
                                   <th>Sil</th>
                                 </tr>
@@ -54,9 +55,11 @@
                                   <td><a href="/content/{{ rs.id }}/{{ rs.slug }}">{{ rs.title }}</a></td>
                                   <td>{{ rs.type }}</td>
                                   <td>{{ rs.menu.title }}</td>
+                                  <td><a href="javascript:;" onclick="window.open('/user/contentaddimage/{{rs.id}}', 'gallery', 'height=600,width=800,top=50,left=150')">
+                                      <img src="{%static 'images/photo-gallery-icon.png' %}" style="height:30px;">
+                                  </a></td>
                                   <td>{{ rs.status }}</td>
                                   <td>{{ rs.create_at }}</td>
-                                  <td>{{ rs.detail|safe }}</td>
                                   <td><button><a href="/user/contentedit/{{rs.id}}" class="primary-btn">Düzenle</a></button></td>
                                   <td><button><a onclick="return confirm('Silmek istediğinize emin misiniz?')" href="/user/contentdelete/{{rs.id}}" class="primary-btn">Sil</a></button></td>
                                 </tr>

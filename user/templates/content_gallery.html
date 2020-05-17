@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>İçerik Galerisi</title>
+</head>
+
+
+<body>
+    <h2>{{ content.title }}</h2>
+    <hr>
+     {% if messages %}  <!--sistem mesajları böyle kullanılır eğer bir mesaj varsa mesajın türüne göre ekrana yazıyor-->
+       {% for message in messages %}
+         <div class="aler aler-{{ message.tags }}" role="alert">
+           {{ message|safe  }}  <!--Bu uyarılar html tagları içeiryor bu yüzden safe yazdık-->
+         </div>
+       {% endfor %}
+     {% endif %}
+
+     <form method="POST" enctype="multipart/form-data"> <!--formda upload olacağı için multipart yapıyoruz-->
+         {% csrf_token %}
+         <input type="hidden" name="content_id" id="id_content_id" value="{{ content_id }}">
+         <label for="id_title">Başlık:</label>
+         <input type="text" name="title" class="input" placeholder="title" maxlength="50"  id="id_title"></p>
+         <label for="id_image">Image</label>
+         <input type="file" name="image" class="input" placeholder="image" accept="image/*"  id="id_image"></p>
+         <button class="primary-btn" type="submit">Resim Yükle</button>
+     </form>
+
+    <hr>
+    <h4>Yüklenen resimler</h4>
+    {% for rs in images %}
+        <img src="{{rs.image.url}}" height="200">
+    {% endfor %}
+
+
+</body>
+</html>

@@ -4,6 +4,10 @@
   <div class="wrapper row1">
 
     <header id="header" class="hoc clear">
+          <div id="logo" class="fl_left">
+        <h1><a href="/">HACHIKO</a></h1>
+      </div>
+
 
       <div class="wrapper row1">
               <script>      //otomatik arama oluşturmak için bunu yapıyoruz.
@@ -27,7 +31,7 @@
 
            <div class="group demo">
 
-              <div class="one_half first">
+              <div class="one_half first" >
                  <form class="example" action="/search/" method="post">
                         {% csrf_token %} <!-- formlarda kullanmak zorunlu-->
                             <input type="text" placeholder="Search.." name="query" id="query"> <!--burada tanımladığım id olan queryi yukarıda functionsta çağırdım-->
@@ -49,9 +53,6 @@
         </div>
         <br>
 
-      <div id="logo" class="fl_left">
-        <h1><a href="/">HACHIKO</a></h1>
-      </div>
 
       <nav id="mainav" class="fl_right">
 

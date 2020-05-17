@@ -2,16 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4fdf06c-4944-4b37-add0-224e53e54b20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/static/images/home-p2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/home/static/images/photo-gallery-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/images/Sahiplendirilmemis6_n58slFM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/templates/content_gallery.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/121110525_EximvmOOrAmYYupza7a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/1435.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/2-525.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/20160827_2_18814849_13660004_AQ9BVT2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/20160827_2_18814849_13660004_vwXUjw3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/22300271792332531850IMG-20151004-WA0000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/22524236672623530586resim2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/22977221502904931032resim3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/23114226913120024636BAKİ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/24395301313128431440IMG-20150929-WA0005_resized.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/26779248703095127413ALİŞ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/26892.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/30935271992725928560resim1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/5dfc847079da3e1f30de6776.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/5eb264e2d3806c1b7cd463fa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/5eb3c5ddc03c0e1eec58dfb0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/5ebd0ebe18c7730fdca450e9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/5ebd0ebe18c7730fdca450eb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/5ebd0ecb18c7730fdca450ed.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/937473.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/9f77af84fedceedfcabd5cea43aba7c2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Animal-Rights.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/E1ACA79E-5501-4556-94D2-C9AC39039F0B-scaled_Sb2Dgjx.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/Ekran_Alıntısı_VMzOEwJ.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/beykoz_da_hayvan_mezarligina_ziyaretci_akin_D208k53u4k.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/hayvan-haklari-evrensel-bildirgesi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/image-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/image-42.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/image-51.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/logo-unesco-150x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/mersin-hayvan-sahiplendirme-ucretsiz-kedi-kopek1_tS8dUv7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/minyatur-evcil-hayvanlar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/unnadamed_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/unnamed_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/unnamed_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/images/unnamed_x3bsZU7.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/content/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/templates/user_contents.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/templates/user_contents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/contents_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/contents_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/header.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -257,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589348885626</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Üye içerikleri resim galerisi eklendi.">
+      <created>1589723872157</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1589723872157</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -301,6 +339,7 @@
     <MESSAGE value="Üye Ckeditör ile içerik ekleme, listeleme, düzenleme ve silme eklendi." />
     <MESSAGE value="Üye yorumları listeleme, silme eklendi." />
     <MESSAGE value="Sıkça sorulan sorular accordion menu eklendi." />
-    <option name="LAST_COMMIT_MESSAGE" value="Sıkça sorulan sorular accordion menu eklendi." />
+    <MESSAGE value="Üye içerikleri resim galerisi eklendi." />
+    <option name="LAST_COMMIT_MESSAGE" value="Üye içerikleri resim galerisi eklendi." />
   </component>
 </project>

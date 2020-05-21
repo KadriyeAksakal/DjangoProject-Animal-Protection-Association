@@ -27,8 +27,10 @@ class MenuAdmin(DraggableMPTTAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display= ['subject', 'comment', 'content', 'user', 'status']  # dikkate alacağımız kısımları yazarız buraya
+    list_display = ['subject', 'comment', 'content', 'user', 'status']  # dikkate alacağımız kısımları yazarız buraya
     list_fields = ['status']
+    list_filter = ['status']
+
 
 
 admin.site.register(Content, ContentAdmin)

@@ -22,6 +22,7 @@ def index(request):
     return render(request, 'user_profile.html', context)
 
 
+@login_required(login_url='/login')  # check login, login olup olmadığını kontrol ediyorum
 def user_update(request):
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)  # request.user is user data
@@ -45,6 +46,7 @@ def user_update(request):
     return render(request, 'user_update.html', context)
 
 
+@login_required(login_url='/login')  # check login, login olup olmadığını kontrol ediyorum
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)

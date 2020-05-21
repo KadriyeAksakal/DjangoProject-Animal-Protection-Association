@@ -7,17 +7,19 @@
     <title>{% block title %} Hayvanları Koruma Derneği {% endblock %}</title>
     <meta name="keywords" content="{% block keywords %}" Anasayfa anahtar kelimeler {% endblock %} >
     <meta name="description" content="{% block description %}" Anasayfa kısa açıklamalar {% endblock %} >
-<meta charset="utf-8">
+    <meta charset="utf-8">
 {% load static %}
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="{%static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="{%static 'layout/styles/layout.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{%static 'layout/styles/lightbox.min.css' %}" rel="stylesheet"  type="text/css" />
+<script src="{%static 'layout/scripts/lightbox-plus-jquery.min.js' %}"></script>
 
     <!-- jQuery !-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
-<!-- jQuery UI !-->
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+    <!-- jQuery UI !-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     {% block head %} {% endblock %}
 </head>
@@ -40,6 +42,7 @@
 <script src="{%static 'layout/scripts/jquery.backtotop.js' %}"></script>
 <script src="{%static 'layout/scripts/jquery.mobilemenu.js' %}"></script>
 <script src="{%static 'layout/scripts/jquery.flexslider-min.js' %}"></script>
+
 
 </body>
 

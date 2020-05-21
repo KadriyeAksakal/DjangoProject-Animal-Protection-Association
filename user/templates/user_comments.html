@@ -42,7 +42,6 @@
                                   <th>Yorum</th>
                                   <th>Durum</th>
                                   <th>Tarih</th>
-                                  <th>Detay</th>
                                   <th></th>
                                 </tr>
                                 {% for rs in comments %}
@@ -52,7 +51,6 @@
                                   <td>{{ rs.comment }}</td>
                                   <td>{{ rs.status }}</td>
                                   <td>{{ rs.create_at }}</td>
-                                  <td>{{ rs.detail|safe }}</td>
                                   <td><button><a onclick="return confirm('Silmek istediğinize emin misiniz?')" href="/user/deletecomment/{{rs.id}}" class="primary-btn">Sil</a></button></td>
                                 </tr>
                                 {% endfor %}

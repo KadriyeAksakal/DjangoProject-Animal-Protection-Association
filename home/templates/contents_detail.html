@@ -5,10 +5,12 @@
 {% block description %} {{ content.description }} {% endblock %}
 {% block head %}
     <link rel='shortcut icon' type="image/x-icon"  href="{{setting.icon.url}}" />
+
 {% endblock %}
 
 {% block content %}
         <!-- BREADCRUMB -->
+
         <div id="breadcrumb" class="hoc clear">
 
            <ul>
@@ -36,9 +38,9 @@
               <div class="hoc clear">
                   <figure id="introblocks">
                       <ul class="nospace group">
-                          <li class="one_third first"><a href="#"><img src="{{ content.image.url }}" alt="" style="height: 200px"></a></li>
+                          <li class="one_third first"><a href="{{ content.image.url }}" data-lightbox="mygallery"><img src="{{ content.image.url }}" alt="" style="height: 200px"></a></li>
                           {% for rs in images %} <!-- İçerik resim galerisi-->
-                          <li class="one_third"><a href="#"><img src="{{ rs.image.url }}" alt="" style="height: 200px"></a></li>
+                          <li class="one_third"><a href="{{ rs.image.url }}" data-lightbox="mygallery"><img src="{{ rs.image.url }}" alt="" style="height: 200px"></a></li>
                           {% endfor %}
 
                       </ul>

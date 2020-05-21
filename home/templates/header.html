@@ -41,7 +41,7 @@
                   <!-- Account -->
                  {% if user.id is not None %}
                    <i class="fa fa-user-o"></i>
-                   <strong class=""><a href="/user"> {{ user.first_name }} </a></strong>/ <strong class=""><a href="logout">Logout</a> </strong><br>
+                   <strong class=""><a href="/user"> {{ user.first_name }} </a></strong>/ <strong class=""><a href="/logout">Logout</a> </strong><br>
                  {% else %}
                     <a href="/login/">Login</a>/<a href="/signup/">Sign Up</a>
                  {% endif %}
